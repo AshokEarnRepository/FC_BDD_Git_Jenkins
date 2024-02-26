@@ -1,6 +1,6 @@
 Feature: PersonalVaul Share Upload
 
-
+Scenario: Share upload link functionality
 
      When user clicks on personal vault
 
@@ -12,9 +12,6 @@ Feature: PersonalVaul Share Upload
 
      And user delete the folder
 
-
-
-     
 
     When user shares an email
 
