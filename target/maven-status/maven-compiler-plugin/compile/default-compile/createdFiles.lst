@@ -1,0 +1,10 @@
+com\qa\factory\DriverFactory.class
+com\qa\util\ConfigReader.class
+com\qa\util\ElementUtil.class
+com\Pages\LegacyMessageVideoRecord.class
+com\Pages\MedicalDocumentPage.class
+com\Pages\AddCustomFolder.class
+com\Pages\LoginPage.class
+com\Pages\HomePage.class
+com\qa\util\Constants.class
+com\Pages\AccountsPage.class
