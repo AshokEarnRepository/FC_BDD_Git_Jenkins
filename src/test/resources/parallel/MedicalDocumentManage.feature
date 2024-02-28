@@ -40,7 +40,7 @@ Background:
     #And the User verifies the text after opening "Uploaded: Feb 22, 2024"
     #And the User clicks on Close button
 @Skip
-Scenario: User takes the picture
+	Scenario: User takes the picture functionality
      
     And User clicks on the Take a picture option
     Then User accepts the allow pop up alert

@@ -12,6 +12,8 @@ import io.cucumber.java.en.When;
 public class AddCustomFolderSteps {
 
     private AddCustomFolder fileManagementPage = new AddCustomFolder(DriverFactory.getDriver());
+    
+    
     private String successMessage;
     private String addedFolderName;
 

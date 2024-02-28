@@ -27,6 +27,8 @@ public class AccountsPageSteps {
 		String passWord = credList.get(0).get("password");
 		
 		DriverFactory.getDriver().get("https://familycentral.com");
+//		DriverFactory.getDriver().get("https://dev.familycentral.com/");
+		
 		 accountspage = loginpage.doLogin(userName, passWord);
 	}
 
@@ -39,7 +41,7 @@ public class AccountsPageSteps {
 
 
 
-	@SuppressWarnings("unlikely-arg-type")
+//	@SuppressWarnings("unlikely-arg-type")
 	@When("user gets account section")
 	public void user_gets_account_section(DataTable sectionTable) throws InterruptedException {
 		

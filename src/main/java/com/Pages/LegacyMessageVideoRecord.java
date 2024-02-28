@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -36,7 +37,7 @@ public class LegacyMessageVideoRecord {
 	private By otpfield = By.xpath("(//input[@autocomplete='one-time-code'])[1]");
 	
 	    private By legacyMessagesButton = By.xpath("//span[normalize-space()='Legacy Messages']");
-	    private By otpInputs = By.xpath("//input[contains(@id,'otp_')]");
+	    private By otpInputs = By.xpath("(//input[contains(@id,'otp_')])[1]");
 	    private By createFirstMessageButton = By.xpath("//button[normalize-space()='Create your first message']");
 	    private By NewMessageBtn = By.xpath("//button[contains(text(),'New Message')]");
 	    private By recordOneHereButton = By.xpath("//button[text()='record one here.']");
@@ -101,13 +102,17 @@ public class LegacyMessageVideoRecord {
 	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });", otpElement);
 
 	        // Wait for the OTP text to be visible
-	        wait.until(ExpectedConditions.visibilityOf(otpElement));
+//	        wait.until(ExpectedConditions.visibilityOf(otpElement));
 
 	        // Extract OTP value
 	        String otpText = otpElement.getText();
+	        System.out.println(otpText);
 	        int startIndex = otpText.indexOf("is ") + "is ".length();
+	        System.out.println(startIndex);
 	        int endIndex = otpText.indexOf(". It will be valid");
+	        System.out.println(endIndex);
 	        String otpValue = otpText.substring(startIndex, endIndex);
+	        System.out.println(otpValue);
 
 	        // Switch back to the original tab
 	        driver.switchTo().window(tabs.get(0));
@@ -205,15 +210,6 @@ public class LegacyMessageVideoRecord {
 //Entering Random Title		    
 		    
 		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
 		     
 		    public void nextButtonMessageTitle() {
 		        WebElement NextBtn_MsgTitle = wait.until(ExpectedConditions.elementToBeClickable(NextBtn_MessageTitle));
@@ -274,7 +270,7 @@ public class LegacyMessageVideoRecord {
 		        
 
               // Method to select a random month from the dropdown
-		        public void selectRandomMonth() {
+		        public void selectRandomMonth() throws InterruptedException {
 		            WebElement monthDropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(specificMonthDropdown));
 		            Select monthSelect = new Select(monthDropdown);
 
@@ -291,48 +287,54 @@ public class LegacyMessageVideoRecord {
 		            // Get the selected month text for logging
 		            String selectedMonth = monthOptions.get(randomIndex).getText();
 		            System.out.println(selectedMonth);
+		            Thread.sleep(2000);
 		        }
 		        
 		        
 		        
 
-		     // Method to select a random day from the dropdown without using Faker
-		        public void selectRandomDay() {
-		            WebElement dayDropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(specificDayDropdown));
-		            Select daySelect = new Select(dayDropdown);
+//		        public void selectRandomDay() {
+//		            WebElement dayDropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(specificDayDropdown));
+//		            Select daySelect = new Select(dayDropdown);
+//
+//		            // Generate a random number between 1 and 29 (inclusive)
+//		            int randomDay = (int) (Math.random() * 29) + 1;
+//
+//		            // Select the option with the randomly generated day value
+//		            daySelect.selectByValue(Integer.toString(randomDay));
+//
+//		            // Get the selected day value for printing
+//		            String selectedDay = daySelect.getFirstSelectedOption().getText();
+//
+//		            System.out.println("Selected day: " + selectedDay);
+//		        }
+		        
+		        public void selectDayFromDropdown() throws InterruptedException {
+		            try {
+		                // Wait for the day dropdown to be visible
+		                WebElement dayDropdown = wait.until(ExpectedConditions.elementToBeClickable(specificDayDropdown));
+		                
+		                Thread.sleep(5000);
 
-		            // Get the total number of options in the dropdown
-		            int totalOptions = daySelect.getOptions().size();
+		                // Use sendKeys to select the third option in the day dropdown
+//		                dayDropdown.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
+//		                dayDropdown
 
-		            // Generate a random number between 1 and totalOptions (inclusive)
-		            int randomDay = (int) (Math.random() * totalOptions) + 1;
+		                // Get the selected day value for printing
+		                String selectedDay = dayDropdown.getAttribute("value");
 
-		            // Select the option with the randomly generated day value
-		            daySelect.selectByValue(Integer.toString(randomDay));
-
-		            // Get the selected day value for printing
-		            String selectedDay = daySelect.getFirstSelectedOption().getText();
-
-		            System.out.println("Selected day: " + selectedDay);
-		        }
-
-
+		                System.out.println("Selected day: " + selectedDay);
+		            } catch (Exception e) {
+		                e.printStackTrace(); // Handle any exceptions that may occur
+		            }
 		            
-		        
+		        }
+
+
+
+
 
 //Random date selection code
-		    
-		        
-		        
-		        
-		        
-		        
-		        
-		        
-		        
-		        
-		        
-		        
 		        
 		        
 		    

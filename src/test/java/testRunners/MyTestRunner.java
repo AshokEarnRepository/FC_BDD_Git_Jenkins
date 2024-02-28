@@ -9,9 +9,9 @@ import io.cucumber.junit.CucumberOptions;
 		
 @CucumberOptions(
 		
-	    features = {"src/test/resources/parallel"},
+	    features = {"src/test/resources/parallel/FileUpload_PhotosVideos.feature"},
 	    glue = {"parallel", "AppHooks"},
-//	   tags = "@all",
+//	   tags = "@tag3",
 	    dryRun=false,
 	    publish = true,
 	    plugin   = {"pretty", "html:target/CucumberReport.html",

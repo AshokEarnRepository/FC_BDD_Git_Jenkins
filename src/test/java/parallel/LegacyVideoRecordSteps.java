@@ -63,6 +63,7 @@ public class LegacyVideoRecordSteps {
 
     @When("the user clicks on Next button")
     public void whenTheUserClicksOnNextButton() throws InterruptedException {
+    	
         legacyMessagePage.clickNext();
     }
 
@@ -129,7 +130,7 @@ public class LegacyVideoRecordSteps {
     	}
 
     	@When("the user selects random month")
-    	public void the_user_selects_random_month() {
+    	public void the_user_selects_random_month() throws InterruptedException {
     		legacyMessagePage.selectRandomMonth();
     	}
     	@When("the user selects random day")
