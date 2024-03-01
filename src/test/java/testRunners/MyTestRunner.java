@@ -9,10 +9,10 @@ import io.cucumber.junit.CucumberOptions;
 		
 @CucumberOptions(
 		
-	    features = {"src/test/resources/parallel/FileUpload_PhotosVideos.feature"},
+	    features = {"src/test/resources/parallel/Calendar_NewEvent.feature"},
 	    glue = {"parallel", "AppHooks"},
 //	   tags = "@tag3",
-	    dryRun=false,
+//	    dryRun=true,
 	    publish = true,
 	    plugin   = {"pretty", "html:target/CucumberReport.html",
 	    		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",

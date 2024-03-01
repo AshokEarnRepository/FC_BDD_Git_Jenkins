@@ -14,11 +14,10 @@ import io.cucumber.java.en.When;
 
 public class LegacyVideoRecordSteps {
 
-	private WebDriver driver;
+	private LegacyMessageVideoRecord legacyMessagePage = new LegacyMessageVideoRecord(DriverFactory.getDriver());
 	
-
-    
-    private LegacyMessageVideoRecord legacyMessagePage = new LegacyMessageVideoRecord(DriverFactory.getDriver());
+	
+	
 
     @Given("the user is on the Legacy Messages page")
     public void givenTheUserIsOnLegacyMessagesPage() {

@@ -1,12 +1,14 @@
 package com.qa.Utils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class WebDriverWaits {
 
@@ -54,6 +56,21 @@ public class WebDriverWaits {
     public void waitForAlert() {
         wait.until(ExpectedConditions.alertIsPresent());
     }
+    public WebElement waitForElementToBeVisible(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public List<WebElement> waitForVisibilityOfAllElements(By locator) {
+        try {
+            return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+        } catch (TimeoutException e) {
+            // Handle timeout exception, log an error, or take appropriate action
+            System.out.println("TimeoutException: Elements not found within the specified time.");
+            // You may also throw the exception again or handle it based on your application's needs.
+            return null;
+        }
+    }
+  
 
 //    public WebElement waitForFrameToBeAvailableAndSwitchToIt(By frameLocator) {
 //        return wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameLocator));

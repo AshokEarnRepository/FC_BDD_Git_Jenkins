@@ -19,6 +19,10 @@ public class LoginPage {
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 	}
+	
+	public String getUrl() {
+		return driver.getCurrentUrl();
+	}
  
 	public String getLoginPageTitle() {
 		return driver.getTitle();

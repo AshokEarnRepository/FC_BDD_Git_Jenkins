@@ -9,6 +9,7 @@ import io.cucumber.java.en.When;
 
 public class LoginPageSteps {
 	
+	
 	private static String title;
 	
 	//Creating an object for the Constructor created in the LoginPage Class.
@@ -19,7 +20,8 @@ public class LoginPageSteps {
 		
 		@Given("user is on login page")
 		public void user_is_on_login_page() {
-		  DriverFactory.getDriver().get("https://www.familycentral.com/");
+//		  DriverFactory.getDriver().get("https://www.familycentral.com/");
+			loginpage.getUrl();
 			
 		}
 	 
