@@ -1,28 +1,35 @@
-#Feature: Home Page profile picture upload functionaliy
-#
-#Background:
-    #Given user is on login page
-    #When user clicks on LandingPageLogin
-    #And user clicks on login option of families
-    #Then user should navigate to login page
-    #When user enters username as "ashok0902@yopmail.com" into email field
-    #And user enters password as "Password@123" into password field
-    #And user clicks on login button
-    #Then user gets the family central page
-#
-#
-#Scenario:
-#Given user is on home page
-#When Click on Upload your profile pic
-#
-#
-#
-#
-#
-#
-#Click on "Upload"
-#Click on "Click to Upload"
-#Click on "Save"
-#Click on "The profile picture has been u"
-#Click on "Account Menu"
-#Click on "My Account"
+@feature
+Feature: Verify DashBoard Let's get started Section
+
+
+
+ Background: 
+  Given User is already logged in to application
+  |username            |password    |
+  |ashokmarch12@yopmail.com|Password@123|
+
+  Scenario: Verify Lets get started Section and perform actions
+    Given user is on home page
+    When Verify the Are you ready to start your day?
+    And User is on My Family Module
+    When User clicks on AddMember
+    Then User should see the PopUpWindow
+    And User Enters the Invite Person Name
+    And User Enters Invite Email Address
+    And User Clicks on Send Invite
+    Then User Should see the "Invite has been sent to email" Message2
+    And User Clicks on home page
+    And User clicks on Your family tab
+    Then User should see the Added FamilyMember
+
+  #Scenario: Verify different actions if "Are you ready to start your day?" text is displayed
+    #Given user is on home page
+    #When Verify the Let's get started Section is visible
+    #And If "Are you ready to start your day?" text is displayed perform different actions
+    #When User clicks on Invite your Advisors
+    #And User clicks on the Invite option to invite a TPA
+    #Then User Clicks on home page
+    #And User clicks on Trusted Professional Advisor tab
+    #And User verifies the TPA Names from the list
+    #Then User should see the TPA added name under Trusted professional section
+    #And Verify the exact match with the added TPA

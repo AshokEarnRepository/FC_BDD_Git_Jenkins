@@ -1,10 +1,11 @@
+@feature
 Feature: Calendar Event Creation with Recurring and Reminder Options
   
   
   Background: 
   Given User is already logged in to application
   |username            |password    |
-  |ashok0902@yopmail.com|Password@123|
+  |ashokmarch12@yopmail.com|Password@123|
   
   
   Scenario: User Creates Monthly Recurring Calendar Event with Reminder

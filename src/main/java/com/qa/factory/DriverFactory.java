@@ -13,39 +13,39 @@ public class DriverFactory {
     private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
     // This Method is used to initialize the threadLocal driver based on the given browser
-    public static WebDriver init_driver(String browser) {
+    public static synchronized WebDriver init_driver(String browser) {
+       
 
-        System.out.println("browser value is :" + browser);
+        if (tlDriver.get() == null) {
+        	 System.out.println("browser value is :" + browser);
+        	 
+            WebDriver driver;
 
-        if (browser.contains("chrome")) {
-        	ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--use-fake-ui-for-media-stream");
+            if (browser.equalsIgnoreCase("chrome")) {
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--use-fake-ui-for-media-stream");
 
-            // Set up ChromeDriver with ChromeOptions
-            tlDriver.set(new ChromeDriver(chromeOptions));
-            
-        } else if (browser.contains("firefox")) {
-        	System.out.println("Setting up FirefoxOptions and disabling notifications");
-        	// Create FirefoxOptions and set preferences as needed
-        	FirefoxOptions firefoxOptions = new FirefoxOptions();
-        	firefoxOptions.addPreference("media.navigator.streams.fake", true);
+                // Set up ChromeDriver with ChromeOptions
+                driver = new ChromeDriver(chromeOptions);
+            } else if (browser.equalsIgnoreCase("firefox")) {
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                firefoxOptions.addPreference("media.navigator.streams.fake", true);
 
-            // Add preferences if needed
-            // ...
+                // Set up FirefoxDriver with FirefoxOptions
+                driver = new FirefoxDriver(firefoxOptions);
+            } else if (browser.equalsIgnoreCase("edge")) {
+                EdgeOptions edgeOptions = new EdgeOptions();
+//                edgeOptions.setCapability("allowCamera", true);
 
-            // Set up FirefoxDriver with FirefoxOptions
-            tlDriver.set(new FirefoxDriver(firefoxOptions));
-            
-        } else if (browser.contains("edge")) {
-            tlDriver.set(new EdgeDriver());
-            EdgeOptions edgeOptions = new EdgeOptions();
-        	edgeOptions.setCapability("allowCamera", true);
-        } else {
-            System.out.println("Please pass the correct browser value: " + browser);
+                // Set up EdgeDriver with EdgeOptions
+                driver = new EdgeDriver(edgeOptions);
+            } else {
+                throw new IllegalArgumentException("Invalid browser specified: " + browser);
+            }
+
+            tlDriver.set(driver);
+            getDriver().manage().window().maximize();
         }
-
-        getDriver().manage().deleteAllCookies();
-        getDriver().manage().window().maximize();
         return getDriver();
     }
 

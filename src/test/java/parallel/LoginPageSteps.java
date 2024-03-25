@@ -18,10 +18,12 @@ public class LoginPageSteps {
 	// When loginpage.java will be executed but before that Hooks will be executed
 	
 		
-		@Given("user is on login page")
-		public void user_is_on_login_page() {
-//		  DriverFactory.getDriver().get("https://www.familycentral.com/");
-			loginpage.getUrl();
+		@Given("user is on landing page")
+		public void user_is_on_landing_page() {
+			System.out.println(">>>Feature: login page feature");
+			  DriverFactory.getDriver().get("https://www.familycentral.com/");
+//				loginpage.();
+				loginpage.getLoginPageTitle();
 			
 		}
 	 

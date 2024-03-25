@@ -1,35 +1,35 @@
-
+@feature
 Feature: Upload a file functionality into Photos and Videos
 
- Background: 
-  Given User is already logged in to application
-  |username            |password    |
-  |ashok0902@yopmail.com|Password@123|
+  #Background: 
+    #Given User is already logged in to application
+    #| username            | password    |
+    #| ashokmarch12@yopmail.com | Password@123 |
 
-@tag1
+  @run-together
   Scenario: Uploading a file using Add option under Photos videos
+   Given User is already logged in to application
+    | username            | password    |
+    | ashokmarch12@yopmail.com | Password@123 |
   
-    Given User is on Home page
-    When User clicks on Photos and Videos Section
+    When User is on Home page
+    And User clicks on Photos and Videos Section
     And User clicks on Family Member
     And User clicks on Add button
     When User uploads a file from the device
     Then User should see the Uploaded Successfully Toast Message
-    
-@tag2
- Scenario: Uploading a file using Click to Upload
- 
+
+  @run-together
+  Scenario: Uploading a file using Click to Upload
     Given User is on Home page
     When User clicks on Photos and Videos Section
     And User clicks on Family Member
     And User clicks on Upload Icon
     When User uploads a file from the device
     Then User should see the Uploaded Successfully Toast Message
-    
-     
- @tag3
- Scenario: User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder
- 
+
+  @run-together
+  Scenario: User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder
     Given User is on Home page
     When User clicks on Photos and Videos Section
     When User clicks on Subscriber Folder
@@ -43,7 +43,3 @@ Feature: Upload a file functionality into Photos and Videos
     And User clicks the added folder
     And User uploads a file into the folder
     Then User should see the Uploaded Successfully Toast Message
-     
-     
-     
-    

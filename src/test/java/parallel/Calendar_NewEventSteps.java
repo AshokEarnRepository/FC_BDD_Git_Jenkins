@@ -14,6 +14,7 @@ public class Calendar_NewEventSteps {
 
     @Given("the user is on the Calendar page")
     public void the_user_is_on_the_calendar_page() {
+    	System.out.println("Feature: Calendar Event Creation with Recurring and Reminder Options");
         newEventPage.clickOnCalendar();
     }
 
@@ -37,9 +38,6 @@ public class Calendar_NewEventSteps {
     	newEventPage.selectEndDate();
     }
 
-
-
-    
 
     @When("User sets the start time to {string}")
     public void user_sets_the_start_time_to(String startTime) {

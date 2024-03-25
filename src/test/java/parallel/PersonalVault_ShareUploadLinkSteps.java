@@ -29,6 +29,7 @@ public class PersonalVault_ShareUploadLinkSteps {
 
     @When("User shares an email")
     public void user_shares_an_email() {
+    	System.out.println(">>>Feature: Personal Vault Share Upload");
 
     	personalVaultPage.firstname();
     	personalVaultPage.lastname();

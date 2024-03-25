@@ -14,11 +14,13 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.github.javafaker.Faker;
+import com.qa.Utils.OtpExtractor;
+import com.qa.Utils.WebDriverWaits;
 
 public class LegacyMessageVideoRecord {
 
 	private WebDriver driver;
-	WebDriverWait wait;
+	WebDriverWaits wait;
 	
 	private static String year = "2024"; 
 	private String month = "March";
@@ -35,6 +37,7 @@ public class LegacyMessageVideoRecord {
 	    // Locators
 	private By otpElement  = By.xpath("//tbody/tr[1]/td[3]");
 	private By otpfield = By.xpath("(//input[@autocomplete='one-time-code'])[1]");
+//	private By otpInputs = By.xpath("(//input[contains(@id,'otp_')])[1]");
 	
 	    private By legacyMessagesButton = By.xpath("//span[normalize-space()='Legacy Messages']");
 	    private By otpInputs = By.xpath("(//input[contains(@id,'otp_')])[1]");
@@ -64,7 +67,7 @@ public class LegacyMessageVideoRecord {
 	
 	public LegacyMessageVideoRecord(WebDriver driver) {
 			this.driver = driver;
-			this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+			this.wait = new WebDriverWaits(driver, Duration.ofSeconds(20));
 		}
  
 		public String getLegacyMessageTitle() {
@@ -73,70 +76,28 @@ public class LegacyMessageVideoRecord {
 		
 	    // Methods to interact with elements
 	    public void clickLegacyMessages() {
-	        WebElement legacyMessagesModule = wait.until(ExpectedConditions.presenceOfElementLocated(legacyMessagesButton));
+	        WebElement legacyMessagesModule = wait.waitForPresenceOfElement(legacyMessagesButton);
 	        legacyMessagesModule.click();
 	    }
-	    
-	  //Otp extract from here
-		  
-			
-	 // Method to extract OTP
-	    public String extractOtpFromSmstome() throws InterruptedException {
-	        // Open a new tab
-	        ((JavascriptExecutor) driver).executeScript("window.open('', '_blank');");
-	        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
-	        driver.switchTo().window(tabs.get(1));
 
-	        // Navigate to the OTP extraction page
-	        driver.get("https://smstome.com/usa/phone/12392990815/sms/5626");
-
-	        // Refresh the page to trigger OTP generation
-	        driver.navigate().refresh();
-
-	        Thread.sleep(3000);
-	        driver.navigate().refresh();
-	        // Wait for the OTP element to be present
-	        WebElement otpElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//tbody/tr[1]/td[3]")));
-
-	        // Scroll the OTP element into view
-	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });", otpElement);
-
-	        // Wait for the OTP text to be visible
-//	        wait.until(ExpectedConditions.visibilityOf(otpElement));
-
-	        // Extract OTP value
-	        String otpText = otpElement.getText();
-	        System.out.println(otpText);
-	        int startIndex = otpText.indexOf("is ") + "is ".length();
-	        System.out.println(startIndex);
-	        int endIndex = otpText.indexOf(". It will be valid");
-	        System.out.println(endIndex);
-	        String otpValue = otpText.substring(startIndex, endIndex);
-	        System.out.println(otpValue);
-
-	        // Switch back to the original tab
-	        driver.switchTo().window(tabs.get(0));
-
-	        // Wait for the OTP field to be clickable
-	        WebElement otpField = wait.until(ExpectedConditions.elementToBeClickable(otpfield));
-
-	        // Send OTP value to the corresponding field
-	        otpField.sendKeys(otpValue);
-
-	        return otpValue;
-	    }
-
-//Otp extract end
+	    // Method to extract OTP
+	    public void extractOtpFromSmstome() throws InterruptedException{
+	 // Call the method to extract OTP
+        String extractedOtp = OtpExtractor.extractOtpFromSmstome(driver, wait);
+        
+        // Use the extracted OTP as needed
+        System.out.println("Extracted OTP: " + extractedOtp);
+}
 
 
 	    public void clickCreateFirstMessage() {
 	        // Wait for the element to be clickable
-	        WebElement createFirstMsg = wait.until(ExpectedConditions.elementToBeClickable(createFirstMessageButton));
+	        WebElement createFirstMsg = wait.waitForElementToBeClickable(createFirstMessageButton);
 
 	        // Check if "Create" option is available
 	        if (driver.findElements(NewMessageBtn).isEmpty()) {
 	            // If "Create" option is not available, click on "New Message" option
-	            WebElement newMessageBtn = wait.until(ExpectedConditions.elementToBeClickable(NewMessageBtn));
+	            WebElement newMessageBtn = wait.waitForElementToBeClickable(NewMessageBtn);
 	            newMessageBtn.click();
 	        } else {
 	            // If "Create" option is available, scroll the element into view
@@ -150,17 +111,17 @@ public class LegacyMessageVideoRecord {
 
 
 	    public void clickRecordOneHere() {
-	    	WebElement recordOneHere=  wait.until(ExpectedConditions.elementToBeClickable(recordOneHereButton));
+	    	WebElement recordOneHere=  wait.waitForElementToBeClickable(recordOneHereButton);
 	    	recordOneHere.click();
 	    }
 
 	    public void clickRecordVideoMessage() {
-	    	WebElement recordVideoMessageBtn = wait.until(ExpectedConditions.elementToBeClickable(recordVideoMessageButton));
+	    	WebElement recordVideoMessageBtn = wait.waitForElementToBeClickable(recordVideoMessageButton);
 	    	recordVideoMessageBtn.click();
 	    }
 
 	    public void clickRecordNow() {
-	    	WebElement recordNowBtn = wait.until(ExpectedConditions.elementToBeClickable(recordNowButton));
+	    	WebElement recordNowBtn = wait.waitForElementToBeClickable(recordNowButton);
 	    	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });", recordNowBtn);
 	    	recordNowBtn.click();
 	        
@@ -168,19 +129,19 @@ public class LegacyMessageVideoRecord {
 
 		    public void clickStartRecording() throws InterruptedException {
 		    	
-		        WebElement startRecordingBtn = wait.until(ExpectedConditions.elementToBeClickable(startRecordingButton));
+		        WebElement startRecordingBtn = wait.waitForElementToBeClickable(startRecordingButton);
 		        startRecordingBtn.click();
 		        Thread.sleep(15000);
 		    }
 
 		    public void clickStopRecording() {
-		    	WebElement stopRecordingBtn = wait.until(ExpectedConditions.elementToBeClickable(stopRecordingButton));
+		    	WebElement stopRecordingBtn = wait.waitForElementToBeClickable(stopRecordingButton);
 		    	stopRecordingBtn.click();
 		    }
 
 		    public void clickNext() throws InterruptedException {
 		    	Thread.sleep(3000);
-		        WebElement nextBtnoption = wait.until(ExpectedConditions.elementToBeClickable(nextButton));
+		        WebElement nextBtnoption = wait.waitForElementToBeClickable(nextButton);
 		        
 		        nextBtnoption.click();
 		    }
@@ -212,29 +173,29 @@ public class LegacyMessageVideoRecord {
 		    
 		     
 		    public void nextButtonMessageTitle() {
-		        WebElement NextBtn_MsgTitle = wait.until(ExpectedConditions.elementToBeClickable(NextBtn_MessageTitle));
+		        WebElement NextBtn_MsgTitle = wait.waitForElementToBeClickable(NextBtn_MessageTitle);
 		        NextBtn_MsgTitle.click();
 		    }
 
 		    public void clickMyFamily() {
-		        WebElement myFamilyBtn = wait.until(ExpectedConditions.elementToBeClickable(myFamilyButton));
+		        WebElement myFamilyBtn = wait.waitForElementToBeClickable(myFamilyButton);
 		        myFamilyBtn.click();
 		    }
 
 		    public void SelectAll_CheckBox() {
 		    	
-		        WebElement myFamilyBtn = wait.until(ExpectedConditions.elementToBeClickable(SelectAllButton));
+		        WebElement myFamilyBtn = wait.waitForElementToBeClickable(SelectAllButton);
 		        myFamilyBtn.click();
 		    }
 		    
 		    public void clickNextAfterSelectAll() {
-		        WebElement nextButtonAfterSelectAll = wait.until(ExpectedConditions.elementToBeClickable(NextBtn_afterSelectAll));
+		        WebElement nextButtonAfterSelectAll = wait.waitForElementToBeClickable(NextBtn_afterSelectAll);
 		        nextButtonAfterSelectAll.click();
 		    }
 		    
 		    public void clickSpecificDateLabel() {
 		        // Wait for the element to be clickable
-		        WebElement specificDateLabelElement = wait.until(ExpectedConditions.elementToBeClickable(specificDateLabel));
+		        WebElement specificDateLabelElement = wait.waitForElementToBeClickable(specificDateLabel);
 
 		        // Scroll the element into view
 		        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });", specificDateLabelElement);
@@ -258,7 +219,7 @@ public class LegacyMessageVideoRecord {
 		   
 		        // Method to select a random year from the dropdown
 		        public void selectRandomYear() {
-		            WebElement yearDropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(specificYearDropdown));
+		            WebElement yearDropdown = wait.waitForElementToBeClickable(specificYearDropdown);
 		            Select yearSelect = new Select(yearDropdown);
 
 		            // Generate a random year between 2020 and 2030 (adjust the range as needed)
@@ -271,7 +232,7 @@ public class LegacyMessageVideoRecord {
 
               // Method to select a random month from the dropdown
 		        public void selectRandomMonth() throws InterruptedException {
-		            WebElement monthDropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(specificMonthDropdown));
+		            WebElement monthDropdown = wait.waitForElementToBeClickable(specificMonthDropdown);
 		            Select monthSelect = new Select(monthDropdown);
 
 		            // Get all available options from the dropdown
@@ -312,7 +273,7 @@ public class LegacyMessageVideoRecord {
 		        public void selectDayFromDropdown() throws InterruptedException {
 		            try {
 		                // Wait for the day dropdown to be visible
-		                WebElement dayDropdown = wait.until(ExpectedConditions.elementToBeClickable(specificDayDropdown));
+		                WebElement dayDropdown = wait.waitForElementToBeClickable(specificDayDropdown);
 		                
 		                Thread.sleep(5000);
 
@@ -341,7 +302,7 @@ public class LegacyMessageVideoRecord {
 		 // Method to verify if the message is displayed
 		    public boolean isUpdateSuccessMessageDisplayed() {
 		        // Wait for the success message to be present on the page
-		        wait.until(ExpectedConditions.presenceOfElementLocated(userUpdatedToast));
+		        wait.waitForPresenceOfElement(userUpdatedToast);
 
 		        // Find the success message element
 		        WebElement successMessageElement = driver.findElement(userUpdatedToast);
@@ -366,7 +327,7 @@ public class LegacyMessageVideoRecord {
 		    // Method to click the selected video based on title
 		    public void clickSelectedVideo() throws InterruptedException {
 		        // Assuming UploadedVideoTableData is the locator for the table containing video information
-		        List<WebElement> cells = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UploadedVideoTableData));
+		        List<WebElement> cells = wait.waitForVisibilityOfAllElements(UploadedVideoTableData);
 
 		        // Iterate through the cells to find the matching video
 		        for (WebElement cell : cells) {
@@ -395,7 +356,7 @@ public class LegacyMessageVideoRecord {
 		    
 		    
 		    public void clickClose() {
-		        WebElement closeBtn = wait.until(ExpectedConditions.elementToBeClickable(closeButton));
+		        WebElement closeBtn = wait.waitForElementToBeClickable(closeButton);
 		        closeBtn.click();
 		    }
 

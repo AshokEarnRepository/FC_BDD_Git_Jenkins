@@ -1,14 +1,10 @@
+@feature
 Feature: Legacy Video Record
 
-Background:
-    Given user is on login page
-    When user clicks on LandingPageLogin
-    And user clicks on login option of families
-    Then user should navigate to login page
-    When user enters username as "nramya19@yopmail.com" into email field
-    And user enters password as "Password@123" into password field
-    And user clicks on login button
-    Then user gets the family central page
+  Background: 
+  Given User is already logged in to application
+  |username            |password    |
+  |ashokmarch12@yopmail.com|Password@123|
 
   Scenario: Legacy Video Record Workflow
   

@@ -15,6 +15,7 @@ public class GeneralLegalPage_PersonalVaultSteps {
  
    @When("user clicks on general legal information")
    public void user_clicks_on_general_legal_information() {
+	   System.out.println(">>> Feature: PersonalVault General Legal Information of Uploading Different file types");
         generalLegalPages.clickgenerallegal();
    }
  
@@ -40,8 +41,8 @@ public class GeneralLegalPage_PersonalVaultSteps {
  
  
    @Then("User should see the {string} Message")
-   public void user_should_see_the_message(String filename) {
-        System.out.print(generalLegalPages.verify());
+   public void user_should_see_the_message(String filename) throws InterruptedException {
+        generalLegalPages.verify();
    }
  
     private String getFilepathForFileNumber(int fileNumber) {
@@ -51,13 +52,13 @@ public class GeneralLegalPage_PersonalVaultSteps {
            case 1:
                return "C:\\Users\\Ashok\\Downloads\\Untitled.png";
           case 2:
-               return "C:\\Users\\Ashok\\Downloads\\Free_Test_Data_100KB_PDF 1.pdf";
+               return "C:\\Users\\Ashok\\Documents\\Medium_sample-pdf-download-10-mb.pdf";
             case 3:
-               return "C:\\Users\\Ashok\\Downloads\\Passport6.jpg";
+               return "Security-at-Family-Central-v2 (1).pdf";
            case 4:
               return "C:\\Users\\Ashok\\Downloads\\TestCase_Scenario.xlsx";
             case 5:
-               return "C:\\Users\\Ashok\\Downloads\\Passport6.jpeg";
+               return "C:\\Users\\Ashok\\Downloads\\Small-Sample-png-Image-File-Download.jpg";
             case 6:
                return "C:\\Users\\Ashok\\Downloads\\LocalFolder.txt";
           // Add more cases as needed

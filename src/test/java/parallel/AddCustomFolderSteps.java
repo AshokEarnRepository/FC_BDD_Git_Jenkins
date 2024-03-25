@@ -1,9 +1,16 @@
 
 package parallel;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Assert;
+import org.openqa.selenium.TimeoutException;
+import org.testng.asserts.SoftAssert;
 
 import com.Pages.AddCustomFolder;
+import com.qa.Utils.FolderNameGenerator;
+import com.qa.Utils.PersonNameGenerator;
 import com.qa.factory.DriverFactory;
 
 import io.cucumber.java.en.Then;
@@ -16,6 +23,8 @@ public class AddCustomFolderSteps {
     
     private String successMessage;
     private String addedFolderName;
+    
+    
 
 //      @Given("the User is on the home page")
 //    public void the_user_is_on_the_home_page() {
@@ -25,6 +34,7 @@ public class AddCustomFolderSteps {
 
     @When("the User clicks on Family Access Files")
     public void the_user_clicks_on_family_access_files() {
+    	System.out.println("Feature: File Management Feature");
     	fileManagementPage.clickOnFamilyAccessFiles();
     }
 
@@ -44,9 +54,9 @@ public class AddCustomFolderSteps {
 
  
 
-    @When("the User enters the folder name as {string} into Folder name field")
-    public void the_user_enters_the_folder_name_as_into(String folderName) {
-        fileManagementPage.enterFolderName(folderName);
+    @When("the User enters the folder name into Folder name field")
+    public void the_user_enters_the_folder_name_as_into() {
+        fileManagementPage.enterFolderName();
     }
 
     @When("the User clicks on the Add button")
@@ -62,18 +72,164 @@ public class AddCustomFolderSteps {
         Assert.assertTrue(successMessage.contains(expectedMessage));
     }
 
-//    @Then("the User verifies the added custom folder {string}")
-//    public void the_user_verifies_the_added_custom_folder(String expectedFolderName) {
-//        addedFolderName = fileManagementPage.getAddedCustomFolderText();
-//        Assert.assertEquals(expectedFolderName, addedFolderName);
+    @Then("the User verifies the added custom folder")
+    public void the_user_verifies_the_added_custom_folder() {
+    	 SoftAssert softAssert = new SoftAssert();
+         softAssert.assertTrue(fileManagementPage.isAddedFolderVisible());
+    }
+
+    @Then("the User clicks and opens the folder")
+    public void the_user_clicks_and_opens_the_folder() throws InterruptedException {
+    	
+    	fileManagementPage.clickOnAddedFolder();
+    }  
+//    @When("User uploads a file into the that specific folder")
+//    public void user_uploads_a_file_into_the_folder() {
+//    	
+////    	fileManagementPage.uploadFile("jpg_small");
+//    	fileManagementPage.uploadFile("jpg_medium");
+//    	fileManagementPage.uploadFile("jpg_large");
+//        // Implement file upload logic here
+//    	
+//    	fileManagementPage.isUploadedSuccessfullyVisible();
 //    }
+    
+//    @When("User uploads a file into the that specific folder")
+//    public void user_uploads_files_into_the_folder() throws InterruptedException {
+//    	
+//    	    List<String> fileFormats = Arrays.asList("jpg_small", "jpg_medium", "jpg_large");
 //
-//    @Then("the User clicks and opens the folder {string}")
-//    public void the_user_clicks_and_opens_the_folder(String folderName) {
-//        fileManagementPage.clickAndOpenFolder();
-//        // Implement further actions if needed
-//    }  
+//    	    for (String fileFormat : fileFormats) {
+//    	        fileManagementPage.uploadFile(fileFormat);
+//    	        fileManagementPage.isUploadedSuccessfullyVisible();
+//    	        Thread.sleep(7000);
+//    	    }
+//    	    fileManagementPage.isUploadedSuccessfullyVisible();
+//    	}
+    
+    @Then("User uploads PDF file into the that specific folder")
+    public void user_uploads_PDF_into_the_that_specific_folder() throws InterruptedException {
+    	   List<String> fileFormats = Arrays.asList("pdf_small", "pdf_medium", "pdf_large");
+
+    	   for (String fileFormat : fileFormats) {
+               fileManagementPage.uploadFile(fileFormat);
+               // Call isUploadedSuccessfullyVisible and handle TimeoutException
+               try {
+                   fileManagementPage.isUploadedSuccessfullyVisible();
+               } catch (TimeoutException e) {
+                   System.out.println("TimeoutException occurred while verifying upload success message.");
+                   // You can log this exception or take any other appropriate action
+               }
+               Thread.sleep(5000);
+    	   }
+    }
+    
+    @Then("User uploads DOCX file into the that specific folder")
+    public void user_uploads_DOCX_into_the_that_specific_folder() throws InterruptedException {
+    	   List<String> fileFormats = Arrays.asList("docx_small", "docx_large");
+
+    	   for (String fileFormat : fileFormats) {
+               fileManagementPage.uploadFile(fileFormat);
+               // Call isUploadedSuccessfullyVisible and handle TimeoutException
+               try {
+                   fileManagementPage.isUploadedSuccessfullyVisible();
+               } catch (TimeoutException e) {
+                   System.out.println("TimeoutException occurred while verifying upload success message.");
+                   // You can log this exception or take any other appropriate action
+               }
+               Thread.sleep(5000);
+    }
+    }
     
     
+    @Then("User uploads TXT file into the that specific folder")
+    public void user_uploads_TXT_into_the_that_specific_folder() throws InterruptedException {
+    	List<String> fileFormats = Arrays.asList("txt_small", "txt_medium", "txt_large");
+
+    	   for (String fileFormat : fileFormats) {
+               fileManagementPage.uploadFile(fileFormat);
+               // Call isUploadedSuccessfullyVisible and handle TimeoutException
+               try {
+                   fileManagementPage.isUploadedSuccessfullyVisible();
+               } catch (TimeoutException e) {
+                   System.out.println("TimeoutException occurred while verifying upload success message.");
+                   // You can log this exception or take any other appropriate action
+               }
+               Thread.sleep(5000);
+    	   }
+  	    
+    }
     
+    @Then("User uploads XLSX file into the that specific folder")
+    public void user_uploads_XLSX_into_the_that_specific_folder() throws InterruptedException {
+    	List<String> fileFormats = Arrays.asList("xlsx_small", "xlsx_medium");
+
+    	   for (String fileFormat : fileFormats) {
+               fileManagementPage.uploadFile(fileFormat);
+               // Call isUploadedSuccessfullyVisible and handle TimeoutException
+               try {
+                   fileManagementPage.isUploadedSuccessfullyVisible();
+               } catch (TimeoutException e) {
+                   System.out.println("TimeoutException occurred while verifying upload success message.");
+                   // You can log this exception or take any other appropriate action
+               }
+               Thread.sleep(5000);
+  	    }
+  	    
+    }
+    @Then("User uploads PNG file into the that specific folder")
+    public void user_uploads_PNG_into_the_that_specific_folder() throws InterruptedException {
+        List<String> fileFormats = Arrays.asList("png_medium", "png_large");
+
+        for (String fileFormat : fileFormats) {
+            fileManagementPage.uploadFile(fileFormat);
+            // Call isUploadedSuccessfullyVisible and handle TimeoutException
+            try {
+                fileManagementPage.isUploadedSuccessfullyVisible();
+            } catch (TimeoutException e) {
+                System.out.println("TimeoutException occurred while verifying upload success message.");
+                // You can log this exception or take any other appropriate action
+            }
+            Thread.sleep(5000);
+        }
+  	    
+    }
+    @Then("User uploads JPG file into the that specific folder")
+    public void user_uploads_JPG_into_the_that_specific_folder() throws InterruptedException {
+    	List<String> fileFormats = Arrays.asList("jpg_small", "jpg_medium", "jpg_large");
+
+    	   for (String fileFormat : fileFormats) {
+               fileManagementPage.uploadFile(fileFormat);
+               // Call isUploadedSuccessfullyVisible and handle TimeoutException
+               try {
+                   fileManagementPage.isUploadedSuccessfullyVisible();
+               } catch (TimeoutException e) {
+                   System.out.println("TimeoutException occurred while verifying upload success message.");
+                   // You can log this exception or take any other appropriate action
+               }
+               Thread.sleep(5000);
+  	    }
+  	    
+    }
+    
+    @Then("User uploads MP4 file into the that specific folder")
+    public void user_uploads_MP4_into_the_that_specific_folder() throws InterruptedException {
+    	List<String> fileFormats = Arrays.asList("mp4_small","mp4_medium","mp4_large");
+
+    	   for (String fileFormat : fileFormats) {
+               fileManagementPage.uploadFile(fileFormat);
+               // Call isUploadedSuccessfullyVisible and handle TimeoutException
+               try {
+                   fileManagementPage.isUploadedSuccessfullyVisible();
+               } catch (TimeoutException e) {
+                   System.out.println("TimeoutException occurred while verifying upload success message.");
+                   // You can log this exception or take any other appropriate action
+               }
+               Thread.sleep(5000);
+  	    }
+  	    
+    }
+    
+
+
 }

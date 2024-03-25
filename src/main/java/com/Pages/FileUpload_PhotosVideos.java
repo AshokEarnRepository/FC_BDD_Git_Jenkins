@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.qa.Utils.FolderNameGenerator;
 import com.qa.Utils.ScrollUtils;
 import com.qa.Utils.WebDriverWaits;
 
@@ -17,10 +18,12 @@ public class FileUpload_PhotosVideos {
     private WebDriverWaits waitUtil;
     private ScrollUtils scrollUtils;
     
+    
+    private String folderName = FolderNameGenerator.generateRandomFolderName();
 
     // Photos and Videos Navigation:
     private By ClickPhotosVideos = By.xpath("//a[@class='nav-link']/child::span[text()='Photos & Videos']");
-    private By ClickOnFamilyMember = By.xpath("(//div[@class='box_icon_name']/following::p)[1]");
+    private By ClickOnFamilyMember = By.xpath("(//div[@class='box_icon_name'])[1]");
     private By ClickAddBtn = By.xpath("//button[@class='primary_btn add_btn dropdown-toggle']");
     private By ClickDropDown_UploadFile = By.xpath("//input[@id='file-upload']");
     private By uploadedSuccessfullyToast = By.xpath("//div[@aria-label='Uploaded successfully']");
@@ -76,10 +79,9 @@ public class FileUpload_PhotosVideos {
     
   
     public void clickOnPhotoVideosBack() {
+    	
         waitUtil.waitForElementToBeClickable(By.xpath("//a[text()='Photo & Video Library']")).click();
         waitUtil.waitForElementToBeClickable(ClickOnSubscriber).click();
-        
-        
     }
     
     public void clickOnUploadIcon() {
@@ -91,8 +93,6 @@ public class FileUpload_PhotosVideos {
     	    String script = "arguments[0].style.display='block'; arguments[0].style.visibility='visible'; arguments[0].value='" + filePath + "';";
     	    ((JavascriptExecutor) driver).executeScript(script, fileInput);
     }
-    
-    
 
     public void uploadFile(String filePath) {
     		
@@ -111,14 +111,17 @@ public class FileUpload_PhotosVideos {
     }
     
     
-    
-    
-    
-    
  // Page Actions for Scenario 3:
 
     public void clickOnSubscriberFolder() {
-        waitUtil.waitForElementToBeClickable(ClickOnSubscriber).click();
+        WebElement subscriber1 = waitUtil.waitForElementToBeClickable(ClickOnSubscriber);
+        
+        if(subscriber1.isDisplayed()) {
+        	subscriber1.click();
+        }else {
+        	waitUtil.waitForElementToBeClickable(By.xpath("//p[@class='text-capitalize']")).click();
+        }
+      
     }
 
 //    public void clickOnNewFolder() {
@@ -129,7 +132,8 @@ public class FileUpload_PhotosVideos {
         waitUtil.waitForElementToBeClickable(ClickOnNewFolder_DropDown).click();
     }
 
-    public void enterFolderName(String folderName) {
+    public void enterFolderName() {
+    	
         WebElement folderNameField = waitUtil.waitForElementToBeClickable(enterFolderNameField);
         folderNameField.clear();
         folderNameField.sendKeys(folderName);
@@ -147,7 +151,7 @@ public class FileUpload_PhotosVideos {
         waitUtil.waitForElementToBeClickable(PopUpCrossBar).click();
     }
 
-    public boolean isAddedFolderVisible(String folderName) {
+    public boolean isAddedFolderVisible() {
     	
     	WebElement addedFolder =waitUtil.waitForVisibilityOfElement(By.xpath("//p[@class='mb-0 file_length' and text()='" + folderName + "']"));
 //        WebElement addedFolder = driver.findElement(By.xpath("//p[@class='mb-0 file_length' and text()='" + folderName + "']"));
@@ -155,7 +159,7 @@ public class FileUpload_PhotosVideos {
     	return addedFolder.isDisplayed();
     }
 
-    public void clickOnAddedFolder(String folderName) {
+    public void clickOnAddedFolder() {
         By folderXpath = By.xpath("//p[@class='mb-0 file_length' and text()='" + folderName + "']");
         WebElement addedFolder = waitUtil.waitForElementToBeClickable(folderXpath);
 

@@ -21,6 +21,7 @@ public class LegacyVideoRecordSteps {
 
     @Given("the user is on the Legacy Messages page")
     public void givenTheUserIsOnLegacyMessagesPage() {
+    	System.out.println(">>>Feature: Legacy Video Record");
       
         legacyMessagePage.clickLegacyMessages();
     }

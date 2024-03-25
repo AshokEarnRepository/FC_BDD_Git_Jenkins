@@ -70,7 +70,7 @@ public class WebDriverWaits {
             return null;
         }
     }
-  
+
 
 //    public WebElement waitForFrameToBeAvailableAndSwitchToIt(By frameLocator) {
 //        return wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameLocator));

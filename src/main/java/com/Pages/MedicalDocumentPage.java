@@ -11,10 +11,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.qa.Utils.ScrollUtils;
+
 public class MedicalDocumentPage {
 
     private WebDriver driver;
-    private WebDriverWait wait;
+    private WebDriverWait wait; 
+    private ScrollUtils scroll;
+    
 
     private String filename ="ashokp";
     // Locators:
@@ -47,6 +51,7 @@ public class MedicalDocumentPage {
     public MedicalDocumentPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.scroll = new ScrollUtils(driver);
     }
 
     // Page Actions: Features(behavior) of the page in the form of methods:
@@ -120,6 +125,7 @@ public class MedicalDocumentPage {
 
 public void clickOnTakePictureOption() {
     WebElement takePictureOption = wait.until(ExpectedConditions.elementToBeClickable(takePictureOptionLocator));
+    scroll.scrollIntoView(takePictureOption);
     takePictureOption.click();
 }
 
@@ -143,6 +149,7 @@ public void selectTakePictureOption2() {
 
     // Assuming the dropdown is part of the new document form
     WebElement takePictureOption2 = wait.until(ExpectedConditions.visibilityOfElementLocated(takePictureOptionLocator2));
+    scroll.scrollIntoView(takePictureOption2);
     takePictureOption2.click();
 } 
 
@@ -153,9 +160,10 @@ public void enterFilename() {
 }
 
 public void clickOnSaveButtonOfPicture() throws InterruptedException {
-	Thread.sleep(2000);
+	
     WebElement saveButton = wait.until(ExpectedConditions.elementToBeClickable(saveButtonLocator));
     saveButton.click();
+    Thread.sleep(5000);
 }
 
 public boolean isUploadedSuccessfullyVisible() {
@@ -167,5 +175,13 @@ public boolean isUploadedSuccessfullyVisible() {
     }
 }
     
+
+
+public void clicksonEmergencyPrep() {
+	//Back and Forth
+	WebElement clickprep = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Emergency Prep']")));
+	clickprep.click();
+
+}
     
 }

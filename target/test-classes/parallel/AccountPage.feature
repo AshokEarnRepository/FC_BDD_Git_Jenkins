@@ -1,12 +1,11 @@
-
+@feature
 Feature: Account Page feature
   I want to use this template for my feature file
-  
   
   Background: 
   Given User is already logged in to application
   |username            |password    |
-  |nramya19@yopmail.com|Password@123|
+  |ashokmarch12@yopmail.com|Password@123|
 
  Scenario: Accounts page title
  
@@ -14,7 +13,6 @@ Feature: Account Page feature
  When user gets the title of the page
  Then page title should be "https://www.familycentral.com"
  
-  
  Scenario: Accounts section count
  
     Given User is on Accounts page

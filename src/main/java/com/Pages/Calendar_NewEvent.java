@@ -144,106 +144,161 @@ public class Calendar_NewEvent {
 	        }
 	    }
 
-	        
-	        
-	        
-	    
 
-	    public void selectStartDate() {
-	        // Wait for and click on the START_DATE element
-	    	WebElement startDateCalendarView = waitUtil.waitForElementToBeClickable(START_DATE);
-	        startDateCalendarView.click();
-	    	
-	    	WebElement clickOnDay = waitUtil.waitForElementToBeClickable(By.xpath("//div[@class='btn-light ng-star-inserted' and text()='5']"));
-	    	clickOnDay.click();
-	    	
-	    	/*
-	        WebElement startDateCalendarView = waitUtil.waitForElementToBeClickable(START_DATE);
-	        startDateCalendarView.click();
-	     
-	        // Select a month (example: Aug)
-	        WebElement monthDropdown = waitUtil.waitForElementToBeClickable(MONTH_SELECT);
-	        Select monthDropDownOptions = new Select(monthDropdown);
-	        System.out.println(monthDropDownOptions);
-	        monthDropDownOptions.selectByVisibleText("Aug");
-	        
+	        // Method to select the start date
+	        public void selectStartDate() {
+	            // Wait for and click on the START_DATE element
+	            WebElement startDateCalendarView = waitUtil.waitForElementToBeClickable(START_DATE);
+	            startDateCalendarView.click();
 
-	        // Select a year (example: 2024)
-	        WebElement yearDropdown = waitUtil.waitForElementToBeClickable(YEAR_DROPDOWN);
-//	        yearDropdown.click();
-//	        WebElement yearDropDown = waitUtil.waitForVisibilityOfElement(YEAR_SELECT);
-	        System.out.println(yearDropdown);
-	        Select yearDropDownOptions = new Select(yearDropdown);
-	        yearDropDownOptions.selectByIndex(4);
+	            // XPath for finding all elements representing days in the calendar
+	            String dayXPath = "//div[@class='btn-light ng-star-inserted']";
 
-	        // Select a day (example: 28)
-	        WebElement daySelectElement = waitUtil.waitForElementToBeClickable(DAY_SELECT);
-	        String desiredDay = "28";
-	        String selectedDay = daySelectElement.getText();
+	            // Find all elements matching the XPath
+	            List<WebElement> allDays = driver.findElements(By.xpath(dayXPath));
 
-	        // Check if the selected day matches the desired day
-	        if (selectedDay.equals(desiredDay)) {
-	            // Perform further actions if the day is as expected
-	            System.out.println("Day is selected correctly: " + selectedDay);
-	        } else {
-	            // Handle the case when the selected day is not as expected
-	            System.out.println("Day is not selected as expected. Actual day: " + selectedDay);
+	            // Iterate through the elements to find an enabled day
+	            WebElement selectedDay = null;
+	            for (WebElement day : allDays) {
+	                if (day.isEnabled()) {
+	                    selectedDay = day;
+	                    break; // Stop iterating once an enabled day is found
+	                }
+	            }
+
+	            // Check if an enabled day is found
+	            if (selectedDay != null) {
+	                // Store the selected day text or any other information you need
+	                String selectedDayText = selectedDay.getText();
+
+	                // Perform any verification or action with the selected day
+	                System.out.println("Selected Day: " + selectedDayText);
+
+	                // Example: Click on the selected day (You can modify this based on your requirements)
+	                selectedDay.click();
+
+	                // Add additional verification steps as needed
+	                // For example, verify that the selected day is now highlighted or displayed differently
+
+	            } else {
+	                System.out.println("No enabled day found in the calendar.");
+	            }
 	        }
-	        
-	        */
-	    }
-		
-		
-		
-		
-		
-		
-	    // Additional Page Actions (Continued):
 
-	    public void selectEndDate() {
+	     // Method to select the end date
+	        public void selectEndDate() {
+	            WebElement endDateCalendarView = waitUtil.waitForElementToBeClickable(END_DATE);
+	            endDateCalendarView.click();
+
+	            // Get the selected start date text
+	            WebElement startDateCalendarView = waitUtil.waitForElementToBeClickable(START_DATE);
+	            String startDateText = startDateCalendarView.getText();
+
+	            // Check if startDateText is empty or null
+	            if (startDateText != null && !startDateText.isEmpty()) {
+	                // Convert the start date text to a numerical value
+	                int startDateValue = Integer.parseInt(startDateText);
+
+	                // Find all elements representing days in the calendar
+	                List<WebElement> allDays = driver.findElements(By.xpath("//div[@class='btn-light ng-star-inserted']"));
+
+	                // Find and select any enabled end date that falls after the start date
+	                WebElement selectedEndDate = null;
+	                for (WebElement day : allDays) {
+	                    if (day.isEnabled()) {
+	                        // Get the numerical value of the day
+	                        int dayValue = Integer.parseInt(day.getText());
+	                        // Check if the day value is greater than or equal to the start date value
+	                        if (dayValue >= startDateValue) {
+	                            // Select the end date and break the loop
+	                            selectedEndDate = day;
+	                            selectedEndDate.click();
+	                            break;
+	                        }
+	                    }
+	                }
+
+	                if (selectedEndDate == null) {
+	                    System.out.println("No valid end date found in the calendar after the selected start date.");
+	                }
+	            } else {
+	                System.out.println("Start date text is empty or null. Cannot parse to integer.");
+	            }
+	        }
+
 	    	
-	    	 // Wait for and click on the START_DATE element
+	    /*
+	    
+	    public void selectEndDate() {
 	    	WebElement EndDateCalendarView = waitUtil.waitForElementToBeClickable(END_DATE);
 	    	EndDateCalendarView.click();
+
+	           // Find all elements representing days in the calendar
+	           List<WebElement> allDays = driver.findElements(By.xpath("//div[@class='btn-light ng-star-inserted']"));
+
+	           // Find and select any enabled end date
+	           if (!allDays.isEmpty()) {
+	               WebElement selectedEndDate = allDays.get(15);  // Select the first enabled day (you can modify this logic)
+
+	               // Re-locate the end date element to avoid StaleElementReferenceException
+
+	               selectedEndDate.click();
+
+	               
+	           } else {
+	               System.out.println("No enabled end date found in the calendar.");
+	           }
+	       } */
 	    	
-	    	WebElement clickOnDay = waitUtil.waitForElementToBeClickable(By.xpath("//div[@class='btn-light ng-star-inserted' and text()='5']"));
-	    	clickOnDay.click();
-	    }
-	    	
-	    /*	
-	        // Wait for and click on the END_DATE element
-	        WebElement endDateCalendarView = waitUtil.waitForElementToBeClickable(END_DATE);
-	        endDateCalendarView.click();
 
-	        // Similar logic as selecting start date...
-	        // Select a month (example: Sep)
-	        WebElement monthDropdown = waitUtil.waitForElementToBeClickable(MONTH_SELECT);
-	        Select monthDropDownOptions = new Select(monthDropdown);
-	        monthDropDownOptions.selectByVisibleText("Sep");
+	         /*   // Method to select the start date
+	            public void selectStartDate() {
+	                WebElement startDateCalendarView = waitUtil.waitForElementToBeClickable(START_DATE);
+	                startDateCalendarView.click();
 
-	        // Select a year (example: 2024)
-	        WebElement yearDropdown = waitUtil.waitForElementToBeClickable(YEAR_DROPDOWN);
-	        yearDropdown.click();
-	        WebElement yearDropDown = waitUtil.waitForElementToBeClickable(YEAR_SELECT);
-	        Select yearDropDownOptions = new Select(yearDropDown);
-	        yearDropDownOptions.selectByVisibleText("2024");
+	                // Your logic to select the start date here
+	                // For example:
+	                // Find the start date element and click on it
+	                // Handle calendar pop-ups or date picker if necessary
+	                // Perform any additional verification or action with the selected start date
+	            }
 
-	        // Select a day (example: 15)
-	        WebElement daySelectElement = waitUtil.waitForElementToBeClickable(DAY_SELECT);
-	        String desiredDay = "15";
-	        String selectedDay = daySelectElement.getText();
+	            // Method to select the end date
+	            public void selectEndDate() {
+	                WebElement endDateCalendarView = waitUtil.waitForElementToBeClickable(END_DATE);
+	                endDateCalendarView.click();
 
-	        // Check if the selected day matches the desired day
-	        if (selectedDay.equals(desiredDay)) {
-	            // Perform further actions if the day is as expected
-	            System.out.println("End date is selected correctly: " + selectedDay);
-	        } else {
-	            // Handle the case when the selected day is not as expected
-	            System.out.println("End date is not selected as expected. Actual day: " + selectedDay);
-	        }
-	    }
-	    
-	    */
+	                // Get the selected start date text
+	                String startDateText = START_DATE.getText();
+
+	                // Convert the start date text to a numerical value
+	                int startDateValue = Integer.parseInt(startDateText);
+
+	                // Find all elements representing days in the calendar
+	                List<WebElement> allDays = driver.findElements(By.xpath("//div[@class='btn-light ng-star-inserted']"));
+
+	                // Find and select any enabled end date that falls after the start date
+	                WebElement selectedEndDate = null;
+	                for (WebElement day : allDays) {
+	                    if (day.isEnabled()) {
+	                        // Get the numerical value of the day
+	                        int dayValue = Integer.parseInt(day.getText());
+	                        // Check if the day value is greater than or equal to the start date value
+	                        if (dayValue >= startDateValue) {
+	                            // Select the end date and break the loop
+	                            selectedEndDate = day;
+	                            selectedEndDate.click();
+	                            break;
+	                        }
+	                    }
+	                }
+
+	                if (selectedEndDate == null) {
+	                    System.out.println("No valid end date found in the calendar after the selected start date.");
+	                }
+	            }
+*/
+
 	    
 
 	    public void addPeople() {

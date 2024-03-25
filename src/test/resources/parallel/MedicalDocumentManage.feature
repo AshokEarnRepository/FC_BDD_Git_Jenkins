@@ -1,15 +1,11 @@
+@feature
 Feature: Medical Document Management Feature
 
 
-Background:
-    Given user is on login page
-    When user clicks on LandingPageLogin
-    And user clicks on login option of families
-    Then user should navigate to login page
-    When user enters username as "nramya19@yopmail.com" into email field
-    And user enters password as "Password@123" into password field
-    And user clicks on login button
-    Then user gets the family central page
+  Background: 
+  Given User is already logged in to application
+  |username            |password    |
+  |ashokmarch12@yopmail.com|Password@123|
     
      When the User clicks on Family Access Files
     And the User clicks on Medical folder
@@ -23,12 +19,6 @@ Background:
   @Sanity
   Scenario: Add and Verify a Medical Document
   
-    #Given the User is on the home page
-    #When the User clicks on Family Access Files
-    #And the User clicks on Medical folder
-    #And the User clicks on Subscriber
-    #And the User clicks on Vaccine Cards folder
-    #And the User clicks on Add option
     And the User clicks on New document to create a document
     And the User enters "Doc_one" into Enter a document name
     And the User clicks on Next Button
@@ -48,7 +38,5 @@ Background:
     And User enters some text as File name
     And User cliks on the Save option
     #Then the User should see a success message "added successfully"
-    @Skip
-    Scenario: User uploads a file into VaccineCards folder
-    Given User is on 
+    #Scenario: User uploads a file into VaccineCards folder
     

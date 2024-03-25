@@ -24,6 +24,7 @@ public class MedicalDocumentSteps {
   
     @When("the User clicks on Medical folder")
     public void the_user_clicks_on_medical_folder() {
+    	System.out.println(">>>Feature: Medical Document Management Feature");
         medicalDocumentPage.clickOnMedicalFolder();
     }
 
@@ -84,7 +85,8 @@ public class MedicalDocumentSteps {
     
 
     @When("User clicks on the Take a picture option")
-    public void user_clicks_on_the_take_a_picture_option() {
+    public void user_clicks_on_the_take_a_picture_option() throws InterruptedException {
+    	Thread.sleep(3000);
     	medicalDocumentPage.clickOnTakePictureOption();
         
     }
@@ -110,7 +112,7 @@ public class MedicalDocumentSteps {
     }
 
     @Then("User cliks on the Save option")
-    public void user_cliks_on_the_save_option() {
-       
+    public void user_cliks_on_the_save_option() throws InterruptedException {
+    	medicalDocumentPage.clickOnSaveButtonOfPicture();
     }
 }

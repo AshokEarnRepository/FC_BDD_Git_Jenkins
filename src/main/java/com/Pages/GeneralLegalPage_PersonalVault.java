@@ -33,7 +33,6 @@ public class GeneralLegalPage_PersonalVault {
 	}
  
 	public void uploadfile(String filePath) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		WebElement fileInput = driver.findElement(uploadfile);
 	        String script = "arguments[0].setAttribute('style', 'display: block; visibility: visible;');";
 	        ((JavascriptExecutor) driver).executeScript(script, fileInput);
@@ -41,8 +40,8 @@ public class GeneralLegalPage_PersonalVault {
 	        Thread.sleep(1000);
 
 			}
-	public boolean verify() {
-		driver.findElement(verifysuccess).click();
-		return true;
+	public void verify() {
+		WebElement successMessage = driver.findElement(verifysuccess);
+	    System.out.println(">> Print: "+ successMessage.isDisplayed());
 	}
 }
