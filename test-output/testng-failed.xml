@@ -6,7 +6,7 @@
       <class name="testRunners.ParallelRunTest">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario"/>
           <include name="tearDownClass"/>
           <include name="tearDown"/>
           <include name="setUp"/>
