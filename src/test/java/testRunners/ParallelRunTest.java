@@ -41,21 +41,21 @@ public class ParallelRunTest extends AbstractTestNGCucumberTests {
 
 //	If you want to run from TestRunner only then uncomment this below code
 	
-//    @BeforeClass
-//    public static void setUp() {
-//        driver = DriverFactory.getDriver();
-//    }
+    @BeforeClass
+    public static void setUp() {
+        driver = DriverFactory.getDriver();
+    }
 	
 //	If you want to run from TestRunner only then uncomment this above code
     
     
 	//crossBrowser SetUp>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	
-	@BeforeClass(alwaysRun = true)
-	@Parameters("browser")  // No quotes around "browser"
-	public void setUp(@Optional String browser) {  // No need for @Parameters here
-	    driver = DriverFactory.init_driver(browser);
-	}
+//	@BeforeClass(alwaysRun = true)
+//	@Parameters("browser")  // No quotes around "browser"
+//	public void setUp(@Optional String browser) {  // No need for @Parameters here
+//	    driver = DriverFactory.init_driver(browser);
+//	}
 	
 	//crossBrowser SetUp>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	
