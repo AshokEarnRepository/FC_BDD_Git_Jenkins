@@ -4,7 +4,7 @@ Feature: Invite Family Member and Verify Invitation
  Background: 
   Given User is already logged in to application
   |username            |password    |
-  |ashokmarch12@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
   
   Scenario: Inviting a Family Member and Verifying Invitation Email
     

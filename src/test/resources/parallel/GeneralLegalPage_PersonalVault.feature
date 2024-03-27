@@ -6,7 +6,7 @@ Feature: PersonalVault General Legal Information of Uploading Different file typ
 
    Given User is already logged in to application
   |username            |password    |
-  |ashokmarch12@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
   
    @tag0
    Scenario: General Legal upload PNG file upload

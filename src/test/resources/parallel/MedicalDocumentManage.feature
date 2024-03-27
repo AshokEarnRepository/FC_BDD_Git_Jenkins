@@ -5,7 +5,7 @@ Feature: Medical Document Management Feature
   Background: 
   Given User is already logged in to application
   |username            |password    |
-  |ashokmarch12@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
     
      When the User clicks on Family Access Files
     And the User clicks on Medical folder

@@ -4,7 +4,7 @@ Feature: File Management Feature
  Background: 
   Given User is already logged in to application
   |username            |password    |
-  |ashokmarch12@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
 
   @pdf
   Scenario: Add a Custom Folder and Upload PDF Files of Small, Medium and Large init

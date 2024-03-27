@@ -4,7 +4,7 @@ Feature: Personal Vault Share Upload
  Background: 
   Given User is already logged in to application
   |username            |password    |
-  |ashokmarch12@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
 
 Scenario: Share upload link functionality
 

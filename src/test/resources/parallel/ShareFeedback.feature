@@ -4,7 +4,7 @@ Feature: Share Feedback
   Background: 
     Given User is already logged in to application
     | username                  | password    |
-    | ashokmarch12@yopmail.com | Password@123 |
+    | ashokmarch26@yopmail.com | Password@123 |
 
   @tag0
   Scenario: Verify Share Feedback Functionality with Text, Email, and Phone Verification

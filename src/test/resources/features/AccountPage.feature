@@ -6,7 +6,7 @@ Feature: Account Page feature
  
   Given User is already logged in to application
   |username            |password    |
-  |ashokmarch12@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
  
   When User is on Accounts page
   And user gets the title of the page

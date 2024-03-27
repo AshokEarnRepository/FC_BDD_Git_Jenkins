@@ -6,7 +6,7 @@ Feature: Verify DashBoard Let's get started Section
  Background: 
   Given User is already logged in to application
   |username            |password    |
-  |ashokmarch12@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
 
   Scenario: Verify Lets get started Section and perform actions
     Given user is on home page

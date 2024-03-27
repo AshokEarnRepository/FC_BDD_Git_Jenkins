@@ -5,7 +5,7 @@ Scenario: Account Menu Functionality of pwd change and Executor and Emergency co
 
 Given User is already logged in to application
   |username            |password    |
-  |ashokmarch12@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
 
     When user clicks on the account memu
     Then user clicks on the my accounts

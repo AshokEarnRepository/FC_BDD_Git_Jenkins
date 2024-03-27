@@ -4,7 +4,7 @@ Feature: Legacy Video Record
   Background: 
   Given User is already logged in to application
   |username            |password    |
-  |ashokmarch12@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
 
   Scenario: Legacy Video Record Workflow
   

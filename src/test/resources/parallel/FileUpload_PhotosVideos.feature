@@ -10,7 +10,7 @@ Feature: Upload a file functionality into Photos and Videos
   Scenario: Uploading a file using Add option under Photos videos
    Given User is already logged in to application
     | username            | password    |
-    | ashokmarch12@yopmail.com | Password@123 |
+    | ashokmarch26@yopmail.com | Password@123 |
   
     When User is on Home page
     And User clicks on Photos and Videos Section

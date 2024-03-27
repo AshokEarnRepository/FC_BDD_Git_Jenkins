@@ -5,7 +5,7 @@ Feature: End to End Flow in one browser
  Background: 
   Given User is already logged in to application
   |username            |password    |
-  |ashokmarch1@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
 
   
 Scenario: End to End Flow in one browser

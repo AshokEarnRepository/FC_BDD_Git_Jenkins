@@ -12,7 +12,7 @@ Feature: login page feature
     When user clicks on LandingPageLogin
     And user clicks on login option of families
     Then user should navigate to login page
-    When user enters username as "ashokmarch1@yopmail.com" into email field
+    When user enters username as "ashokmarch26@yopmail.com" into email field
     And user enters password as "Password@123" into password field
     And user clicks on login button
     Then user gets the family central page

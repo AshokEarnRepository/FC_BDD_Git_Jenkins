@@ -4,7 +4,7 @@ Feature: Upload Passport from IDs Section
  Background: 
   Given User is already logged in to application
   |username            |password    |
-  |ashokmarch12@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
 
 Scenario: Upload Different Passport Files into Passport folder
 
