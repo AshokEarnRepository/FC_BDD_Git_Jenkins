@@ -6,7 +6,7 @@ Feature: Calendar Event Creation with Recurring and Reminder Options
   
     Given User is already logged in to application
   |username            |password    |
-  |ashokmarch12@yopmail.com|Password@123|
+  |ashokmarch26@yopmail.com|Password@123|
   
     When the user is on the Calendar page
     When the user clicks on New Event
