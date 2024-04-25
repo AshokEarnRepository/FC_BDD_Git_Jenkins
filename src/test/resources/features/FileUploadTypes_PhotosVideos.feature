@@ -7,7 +7,7 @@ Feature: Upload a file functionality into Photos and Videos
   
     Given User is already logged in to application
     | username            | password    |
-    | ashokmarch12@yopmail.com | Password@123 |
+    | ashokmarch26@yopmail.com | Password@123 |
     
     Given User is on Home page
     When User clicks on Photos and Videos Section

@@ -1,0 +1,1994 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Mar 27, 2024 01:43:58 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Mar 27, 2024 01:43:58 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Mar 27, 2024 01:47:38 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>1</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>3</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='25%'>
+<b>1</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='75%'><b>3</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='37%'><b>6</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='62%'><b>10</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='34%'><b>44</b> steps passed</small></div>
+<div>
+<small data-tooltip='7%'><b>10</b> steps failed,
+<b>74</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Account Page feature":24.675,"Calendar Event Creation with Recurring and Reminder Options":29.626,"Upload a file functionality into Photos and Videos":134.689,"login page feature":105.655
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@feature</td>
+<td>4</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>33.333%</td>
+</tr>
+<tr>
+<td>@login</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@run-together</td>
+<td>0</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@Ashok</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>AppName</td>
+<td>FamilyCentral</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Ashok</td>
+</tr>
+<tr>
+<td>build</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 1,
+failParent: 3,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 6,
+failChild: 10,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 44,
+failGrandChild: 10,
+warningGrandChild: 0,
+skipGrandChild: 74,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@feature</a><a class="dropdown-item" href="#">@login</a><a class="dropdown-item" href="#">@run-together</a><a class="dropdown-item" href="#">@Ashok</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Account Page feature</p>
+            <p class="text-sm">
+              <span>1:44:02 pm</span> / <span>00:00:24:675</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Account Page feature</h5>
+<span class='badge badge-success'>03.27.2024 1:44:02 pm</span>
+<span class='badge badge-danger'>03.27.2024 1:44:26 pm</span>
+<span class='badge badge-default'>00:00:24:675</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> I want to use this template for my feature file</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Accounts page title</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_is_already_logged_in_to_application(io.cucumber.datatable.DataTable)">
+                <span>Given User is already logged in to application</span>
+      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>ashokmarch26@yopmail.com</td><td>Password@123</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_is_on_accounts_page()">
+                <span>When User is on Accounts page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_gets_the_title_of_the_page()">
+                <span>And user gets the title of the page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.page_title_should_be(java.lang.String)">
+                <span>Then page title should be "https://www.familycentral.com"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="6"><span class="badge log pass-bg mr-2">Pass</span>Accounts page title</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_is_already_logged_in_to_application(io.cucumber.datatable.DataTable)">
+                <span>Given User is already logged in to application</span>
+      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>ashokmarch26@yopmail.com</td><td>Password@123</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_is_on_accounts_page()">
+                <span>When User is on Accounts page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_gets_the_title_of_the_page()">
+                <span>And user gets the title of the page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.page_title_should_be(java.lang.String)">
+                <span>Then page title should be "https://www.familycentral.com"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="14"><span class="badge log pass-bg mr-2">Pass</span>Accounts section count</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_is_already_logged_in_to_application(io.cucumber.datatable.DataTable)">
+                <span>Given User is already logged in to application</span>
+      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>ashokmarch12@yopmail.com</td><td>Password@123</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_gets_account_section(io.cucumber.datatable.DataTable)">
+                <span>When user gets account section</span>
+      <div><table class='markup-table table '><tr><td>Sign up and create an account</td></tr><tr><td>Add a family member</td></tr><tr><td>Upload your profile pic</td></tr><tr><td>Add an emergency contact</td></tr><tr><td>Invite a trusted professional advisor</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.AccountsPageSteps.account_section_count_should_be(java.lang.Integer)">
+                <span>Then account section count should be 5</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="22"><span class="badge log pass-bg mr-2">Pass</span>Accounts section count</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_is_already_logged_in_to_application(io.cucumber.datatable.DataTable)">
+                <span>Given User is already logged in to application</span>
+      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>ashokmarch12@yopmail.com</td><td>Password@123</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_gets_account_section(io.cucumber.datatable.DataTable)">
+                <span>When user gets account section</span>
+      <div><table class='markup-table table '><tr><td>Sign up and create an account</td></tr><tr><td>Add a family member</td></tr><tr><td>Upload your profile pic</td></tr><tr><td>Add an emergency contact</td></tr><tr><td>Invite a trusted professional advisor</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.AccountsPageSteps.account_section_count_should_be(java.lang.Integer)">
+                <span>Then account section count should be 5</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="30"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Calendar Event Creation with Recurring and Reminder Options</p>
+            <p class="text-sm">
+              <span>1:44:24 pm</span> / <span>00:00:29:626</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Calendar Event Creation with Recurring and Reminder Options</h5>
+<span class='badge badge-success'>03.27.2024 1:44:24 pm</span>
+<span class='badge badge-danger'>03.27.2024 1:44:53 pm</span>
+<span class='badge badge-default'>00:00:29:626</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="31"><span class="badge log fail-bg mr-2">Fail</span>User Creates Monthly Recurring Calendar Event with Reminder</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="parallel.AccountsPageSteps.user_is_already_logged_in_to_application(io.cucumber.datatable.DataTable)">
+                <span>Given User is already logged in to application</span>
+      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>ashokmarch26@yopmail.com</td><td>Password@123</td></tr></table>
+      </div>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@id='login-email'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.59, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59154/devtoo..., se:cdpVersion: 123.0.6312.59, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ab9e8847ce6038f00d9b1d7ca237a4e9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.qa.Utils.WebDriverWaits.waitForElementToBeClickable(WebDriverWaits.java:37)
+	at com.Pages.LoginPage.doLogin(LoginPage.java:78)
+	at parallel.AccountsPageSteps.user_is_already_logged_in_to_application(AccountsPageSteps.java:39)
+	at ✽.User is already logged in to application(file:///C:/Users/Ashok/eclipse-workspace/FC_BDD_Git_Jenkins/src/test/resources/features/Calendar_NewEvent.feature:7)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.the_user_is_on_the_calendar_page()">
+                <span>When the user is on the Calendar page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.the_user_clicks_on_new_event()">
+                <span>When the user clicks on New Event</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.user_enters_into_event_title(java.lang.String)">
+                <span>And User enters "Event001" into EventTitle</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.selects_the_start_date_on_the_calendar()">
+                <span>And selects the start date on the calendar</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.user_sets_the_start_time_to(java.lang.String)">
+                <span>And User sets the start time to "01:00"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.user_sets_the_end_time_to(java.lang.String)">
+                <span>And User sets the end time to "14:00"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.chooses_to_set_a_recurring_event()">
+                <span>And chooses to set a recurring event</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.user_sets_the_recurrence_to()">
+                <span>And User sets the recurrence to Monthly</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.selects_the_end_date_on_the_calendar()">
+                <span>And selects the End date on the calendar</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.assigns_the_event_to_family_member()">
+                <span>And assigns the event to family member</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.enters_some_text_into_the_description()">
+                <span>And enters someText into the description</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.clicks_on_save()">
+                <span>And clicks on save</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.the_user_should_see_the_message(java.lang.String)">
+                <span>Then the user should see the message "Your event has been created"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>_U_s_e_r_ _C_r_e_a_t_e_s_ _M_o_n_t_h_l_y_ _R_e_c_u_r_r_i_n_g_ _C_a_l_e_n_d_a_r_ _E_v_e_n_t_ _w_i_t_h_ _R_e_m_i_n_d_e_r_
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../Screenshots/embedded1.png' src="../Screenshots/embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="37"><span class="badge log fail-bg mr-2">Fail</span>User Creates Monthly Recurring Calendar Event with Reminder</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="parallel.AccountsPageSteps.user_is_already_logged_in_to_application(io.cucumber.datatable.DataTable)">
+                <span>Given User is already logged in to application</span>
+      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>ashokmarch26@yopmail.com</td><td>Password@123</td></tr></table>
+      </div>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@id='login-email'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.1, moz:accessibilityChecks: false, moz:buildID: 20240321230221, moz:debuggerAddress: 127.0.0.1:38697, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 23392, moz:profile: C:\WINDOWS\SystemTemp\rust_..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:38697/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a6e259e1-eb9d-4e83-9e4a-5ba1fd188006
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.qa.Utils.WebDriverWaits.waitForElementToBeClickable(WebDriverWaits.java:37)
+	at com.Pages.LoginPage.doLogin(LoginPage.java:78)
+	at parallel.AccountsPageSteps.user_is_already_logged_in_to_application(AccountsPageSteps.java:39)
+	at ✽.User is already logged in to application(file:///C:/Users/Ashok/eclipse-workspace/FC_BDD_Git_Jenkins/src/test/resources/features/Calendar_NewEvent.feature:7)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.the_user_is_on_the_calendar_page()">
+                <span>When the user is on the Calendar page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.the_user_clicks_on_new_event()">
+                <span>When the user clicks on New Event</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.user_enters_into_event_title(java.lang.String)">
+                <span>And User enters "Event001" into EventTitle</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.selects_the_start_date_on_the_calendar()">
+                <span>And selects the start date on the calendar</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.user_sets_the_start_time_to(java.lang.String)">
+                <span>And User sets the start time to "01:00"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.user_sets_the_end_time_to(java.lang.String)">
+                <span>And User sets the end time to "14:00"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.chooses_to_set_a_recurring_event()">
+                <span>And chooses to set a recurring event</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.user_sets_the_recurrence_to()">
+                <span>And User sets the recurrence to Monthly</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.selects_the_end_date_on_the_calendar()">
+                <span>And selects the End date on the calendar</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.assigns_the_event_to_family_member()">
+                <span>And assigns the event to family member</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.enters_some_text_into_the_description()">
+                <span>And enters someText into the description</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.clicks_on_save()">
+                <span>And clicks on save</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.Calendar_NewEventSteps.the_user_should_see_the_message(java.lang.String)">
+                <span>Then the user should see the message "Your event has been created"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>_U_s_e_r_ _C_r_e_a_t_e_s_ _M_o_n_t_h_l_y_ _R_e_c_u_r_r_i_n_g_ _C_a_l_e_n_d_a_r_ _E_v_e_n_t_ _w_i_t_h_ _R_e_m_i_n_d_e_r_
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../Screenshots/embedded2.png' src="../Screenshots/embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="55"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Upload a file functionality into Photos and Videos</p>
+            <p class="text-sm">
+              <span>1:44:48 pm</span> / <span>00:02:14:689</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Upload a file functionality into Photos and Videos</h5>
+<span class='badge badge-success'>03.27.2024 1:44:48 pm</span>
+<span class='badge badge-danger'>03.27.2024 1:47:02 pm</span>
+<span class='badge badge-default'>00:02:14:689</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=55</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="56"><span class="badge log fail-bg mr-2">Fail</span>Uploading a file using Add option under Photos videos</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="parallel.AccountsPageSteps.user_is_already_logged_in_to_application(io.cucumber.datatable.DataTable)">
+                <span>Given User is already logged in to application</span>
+      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>ashokmarch26@yopmail.com</td><td>Password@123</td></tr></table>
+      </div>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@id='login-email'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.59, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59154/devtoo..., se:cdpVersion: 123.0.6312.59, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ab9e8847ce6038f00d9b1d7ca237a4e9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.qa.Utils.WebDriverWaits.waitForElementToBeClickable(WebDriverWaits.java:37)
+	at com.Pages.LoginPage.doLogin(LoginPage.java:78)
+	at parallel.AccountsPageSteps.user_is_already_logged_in_to_application(AccountsPageSteps.java:39)
+	at ✽.User is already logged in to application(file:///C:/Users/Ashok/eclipse-workspace/FC_BDD_Git_Jenkins/src/test/resources/features/FileUploadTypes_PhotosVideos.feature:8)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_is_on_home_page()">
+                <span>Given User is on Home page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_photos_and_videos_section()">
+                <span>When User clicks on Photos and Videos Section</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.User_clicks_on_Family_Member()">
+                <span>And User clicks on Family Member</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_add_button()">
+                <span>And User clicks on Add button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_uploads_a_file_from_the_device()">
+                <span>When User uploads a file from the device</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_should_see_the_uploaded_successfully_toast_message()">
+                <span>Then User should see the Uploaded Successfully Toast Message</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>_U_p_l_o_a_d_i_n_g_ _a_ _f_i_l_e_ _u_s_i_n_g_ _A_d_d_ _o_p_t_i_o_n_ _u_n_d_e_r_ _P_h_o_t_o_s_ _v_i_d_e_o_s_
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../Screenshots/embedded3.png' src="../Screenshots/embedded3.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="74"><span class="badge log fail-bg mr-2">Fail</span>Uploading a file using Add option under Photos videos</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="parallel.AccountsPageSteps.user_is_already_logged_in_to_application(io.cucumber.datatable.DataTable)">
+                <span>Given User is already logged in to application</span>
+      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>ashokmarch26@yopmail.com</td><td>Password@123</td></tr></table>
+      </div>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[text()='Log In'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.1, moz:accessibilityChecks: false, moz:buildID: 20240321230221, moz:debuggerAddress: 127.0.0.1:38697, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 23392, moz:profile: C:\WINDOWS\SystemTemp\rust_..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:38697/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a6e259e1-eb9d-4e83-9e4a-5ba1fd188006
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.qa.Utils.WebDriverWaits.waitForElementToBeClickable(WebDriverWaits.java:37)
+	at com.Pages.LoginPage.doLogin(LoginPage.java:76)
+	at parallel.AccountsPageSteps.user_is_already_logged_in_to_application(AccountsPageSteps.java:39)
+	at ✽.User is already logged in to application(file:///C:/Users/Ashok/eclipse-workspace/FC_BDD_Git_Jenkins/src/test/resources/features/FileUploadTypes_PhotosVideos.feature:8)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_is_on_home_page()">
+                <span>Given User is on Home page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_photos_and_videos_section()">
+                <span>When User clicks on Photos and Videos Section</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.User_clicks_on_Family_Member()">
+                <span>And User clicks on Family Member</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_add_button()">
+                <span>And User clicks on Add button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_uploads_a_file_from_the_device()">
+                <span>When User uploads a file from the device</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_should_see_the_uploaded_successfully_toast_message()">
+                <span>Then User should see the Uploaded Successfully Toast Message</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>_U_p_l_o_a_d_i_n_g_ _a_ _f_i_l_e_ _u_s_i_n_g_ _A_d_d_ _o_p_t_i_o_n_ _u_n_d_e_r_ _P_h_o_t_o_s_ _v_i_d_e_o_s_
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../Screenshots/embedded7.png' src="../Screenshots/embedded7.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="85"><span class="badge log fail-bg mr-2">Fail</span>Uploading a file using Click to Upload</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.FileUpload_PhotosVideosSteps.user_is_on_home_page()">
+                <span>Given User is on Home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_photos_and_videos_section()">
+                <span>When User clicks on Photos and Videos Section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="parallel.FileUpload_PhotosVideosSteps.User_clicks_on_Family_Member()">
+                <span>And User clicks on Family Member</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//div[@class='box_icon_name'])[1] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.59, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59154/devtoo..., se:cdpVersion: 123.0.6312.59, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ab9e8847ce6038f00d9b1d7ca237a4e9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.qa.Utils.WebDriverWaits.waitForElementToBeClickable(WebDriverWaits.java:37)
+	at com.Pages.FileUpload_PhotosVideos.clickOnFamilyMember(FileUpload_PhotosVideos.java:71)
+	at parallel.FileUpload_PhotosVideosSteps.User_clicks_on_Family_Member(FileUpload_PhotosVideosSteps.java:39)
+	at ✽.User clicks on Family Member(file:///C:/Users/Ashok/eclipse-workspace/FC_BDD_Git_Jenkins/src/test/resources/features/FileUploadTypes_PhotosVideos.feature:23)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_add_button()">
+                <span>And User clicks on Add button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.User_clicks_on_Upload_Icon()">
+                <span>And User clicks on Upload Icon</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_uploads_a_file_from_the_device()">
+                <span>When User uploads a file from the device</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_should_see_the_uploaded_successfully_toast_message()">
+                <span>Then User should see the Uploaded Successfully Toast Message</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>_U_p_l_o_a_d_i_n_g_ _a_ _f_i_l_e_ _u_s_i_n_g_ _C_l_i_c_k_ _t_o_ _U_p_l_o_a_d_
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../Screenshots/embedded4.png' src="../Screenshots/embedded4.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="96"><span class="badge log fail-bg mr-2">Fail</span>User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.FileUpload_PhotosVideosSteps.user_is_on_home_page()">
+                <span>Given User is on Home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_photos_and_videos_section()">
+                <span>When User clicks on Photos and Videos Section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_subscriber_folder()">
+                <span>When User clicks on Subscriber Folder</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//p[@class='text-capitalize'])[1] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.59, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59154/devtoo..., se:cdpVersion: 123.0.6312.59, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ab9e8847ce6038f00d9b1d7ca237a4e9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.qa.Utils.WebDriverWaits.waitForElementToBeClickable(WebDriverWaits.java:37)
+	at com.Pages.FileUpload_PhotosVideos.clickOnSubscriberFolder(FileUpload_PhotosVideos.java:117)
+	at parallel.FileUpload_PhotosVideosSteps.user_clicks_on_subscriber_folder(FileUpload_PhotosVideosSteps.java:71)
+	at ✽.User clicks on Subscriber Folder(file:///C:/Users/Ashok/eclipse-workspace/FC_BDD_Git_Jenkins/src/test/resources/features/FileUploadTypes_PhotosVideos.feature:33)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_add_option_button()">
+                <span>And User clicks on Add Option Button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.User_clicks_on_New_Folder_from_DropDown()">
+                <span>And User clicks on New Folder from DropDown</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_enters_the_folder_name()">
+                <span>And User enters the Folder name</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_the_submit_button_or_add()">
+                <span>And User clicks on the Submit button or Add</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_should_see_the_successfully_added_message()">
+                <span>Then User should see the Successfully Added Message</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_closes_the_pop_up_message()">
+                <span>And User closes the Pop up Message</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_should_see_the_added_folder_name()">
+                <span>Then User should see the added Folder Name</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.User_clicks_the_added_folder()">
+                <span>And User clicks the added folder</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_uploads_a_file_into_the_folder()">
+                <span>And User uploads a file into the folder</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_should_see_the_uploaded_successfully_toast_message()">
+                <span>Then User should see the Uploaded Successfully Toast Message</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>_U_s_e_r_ _A_d_d_s_ _a_ _F_o_l_d_e_r_ _U_n_d_e_r_ _S_u_b_s_c_r_i_b_e_r_ _F_o_l_d_e_r_ _a_n_d_ _U_p_l_o_a_d_s_ _a_ _F_i_l_e_ _i_n_t_o_ _t_h_e_ _N_e_w_ _F_o_l_d_e_r_
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../Screenshots/embedded5.png' src="../Screenshots/embedded5.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="140"><span class="badge log fail-bg mr-2">Fail</span>Uploading a file using Click to Upload</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.FileUpload_PhotosVideosSteps.user_is_on_home_page()">
+                <span>Given User is on Home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_photos_and_videos_section()">
+                <span>When User clicks on Photos and Videos Section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="parallel.FileUpload_PhotosVideosSteps.User_clicks_on_Family_Member()">
+                <span>And User clicks on Family Member</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//div[@class='box_icon_name'])[1] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.1, moz:accessibilityChecks: false, moz:buildID: 20240321230221, moz:debuggerAddress: 127.0.0.1:38697, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 23392, moz:profile: C:\WINDOWS\SystemTemp\rust_..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:38697/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a6e259e1-eb9d-4e83-9e4a-5ba1fd188006
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.qa.Utils.WebDriverWaits.waitForElementToBeClickable(WebDriverWaits.java:37)
+	at com.Pages.FileUpload_PhotosVideos.clickOnFamilyMember(FileUpload_PhotosVideos.java:71)
+	at parallel.FileUpload_PhotosVideosSteps.User_clicks_on_Family_Member(FileUpload_PhotosVideosSteps.java:39)
+	at ✽.User clicks on Family Member(file:///C:/Users/Ashok/eclipse-workspace/FC_BDD_Git_Jenkins/src/test/resources/features/FileUploadTypes_PhotosVideos.feature:23)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_add_button()">
+                <span>And User clicks on Add button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.User_clicks_on_Upload_Icon()">
+                <span>And User clicks on Upload Icon</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_uploads_a_file_from_the_device()">
+                <span>When User uploads a file from the device</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_should_see_the_uploaded_successfully_toast_message()">
+                <span>Then User should see the Uploaded Successfully Toast Message</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>_U_p_l_o_a_d_i_n_g_ _a_ _f_i_l_e_ _u_s_i_n_g_ _C_l_i_c_k_ _t_o_ _U_p_l_o_a_d_
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../Screenshots/embedded8.png' src="../Screenshots/embedded8.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="151"><span class="badge log fail-bg mr-2">Fail</span>User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.FileUpload_PhotosVideosSteps.user_is_on_home_page()">
+                <span>Given User is on Home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_photos_and_videos_section()">
+                <span>When User clicks on Photos and Videos Section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_subscriber_folder()">
+                <span>When User clicks on Subscriber Folder</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//p[@class='text-capitalize'])[1] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.1, moz:accessibilityChecks: false, moz:buildID: 20240321230221, moz:debuggerAddress: 127.0.0.1:38697, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 23392, moz:profile: C:\WINDOWS\SystemTemp\rust_..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:38697/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a6e259e1-eb9d-4e83-9e4a-5ba1fd188006
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.qa.Utils.WebDriverWaits.waitForElementToBeClickable(WebDriverWaits.java:37)
+	at com.Pages.FileUpload_PhotosVideos.clickOnSubscriberFolder(FileUpload_PhotosVideos.java:117)
+	at parallel.FileUpload_PhotosVideosSteps.user_clicks_on_subscriber_folder(FileUpload_PhotosVideosSteps.java:71)
+	at ✽.User clicks on Subscriber Folder(file:///C:/Users/Ashok/eclipse-workspace/FC_BDD_Git_Jenkins/src/test/resources/features/FileUploadTypes_PhotosVideos.feature:33)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_add_option_button()">
+                <span>And User clicks on Add Option Button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.User_clicks_on_New_Folder_from_DropDown()">
+                <span>And User clicks on New Folder from DropDown</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_enters_the_folder_name()">
+                <span>And User enters the Folder name</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_clicks_on_the_submit_button_or_add()">
+                <span>And User clicks on the Submit button or Add</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_should_see_the_successfully_added_message()">
+                <span>Then User should see the Successfully Added Message</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_closes_the_pop_up_message()">
+                <span>And User closes the Pop up Message</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_should_see_the_added_folder_name()">
+                <span>Then User should see the added Folder Name</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.User_clicks_the_added_folder()">
+                <span>And User clicks the added folder</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_uploads_a_file_into_the_folder()">
+                <span>And User uploads a file into the folder</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.FileUpload_PhotosVideosSteps.user_should_see_the_uploaded_successfully_toast_message()">
+                <span>Then User should see the Uploaded Successfully Toast Message</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>_U_s_e_r_ _A_d_d_s_ _a_ _F_o_l_d_e_r_ _U_n_d_e_r_ _S_u_b_s_c_r_i_b_e_r_ _F_o_l_d_e_r_ _a_n_d_ _U_p_l_o_a_d_s_ _a_ _F_i_l_e_ _i_n_t_o_ _t_h_e_ _N_e_w_ _F_o_l_d_e_r_
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../Screenshots/embedded9.png' src="../Screenshots/embedded9.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="113"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">login page feature</p>
+            <p class="text-sm">
+              <span>1:45:52 pm</span> / <span>00:01:45:655</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">login page feature</h5>
+<span class='badge badge-success'>03.27.2024 1:45:52 pm</span>
+<span class='badge badge-danger'>03.27.2024 1:47:38 pm</span>
+<span class='badge badge-default'>00:01:45:655</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=113</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="114"><span class="badge log pass-bg mr-2">Pass</span>Login page title</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_is_on_landing_page()">
+                <span>Given user is on landing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_gets_the_title_of_the_page()">
+                <span>When user gets the title of the page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="120"><span class="badge log fail-bg mr-2">Fail</span>Login with valid credentials</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_is_on_landing_page()">
+                <span>Given user is on landing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_clicks_on_landing_page_login()">
+                <span>When user clicks on LandingPageLogin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_clicks_on_login_option_of_families()">
+                <span>And user clicks on login option of families</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_should_navigate_to_login_page()">
+                <span>Then user should navigate to login page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="parallel.LoginPageSteps.user_enters_username_as_into_email_field(java.lang.String)">
+                <span>When user enters username as "ashokmarch26@yopmail.com" into email field</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@id='login-email'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.59, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59154/devtoo..., se:cdpVersion: 123.0.6312.59, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ab9e8847ce6038f00d9b1d7ca237a4e9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.qa.Utils.WebDriverWaits.waitForElementToBeClickable(WebDriverWaits.java:37)
+	at com.Pages.LoginPage.enteremailaddress(LoginPage.java:53)
+	at parallel.LoginPageSteps.user_enters_username_as_into_email_field(LoginPageSteps.java:64)
+	at ✽.user enters username as "ashokmarch26@yopmail.com" into email field(file:///C:/Users/Ashok/eclipse-workspace/FC_BDD_Git_Jenkins/src/test/resources/features/LoginPage.feature:17)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.LoginPageSteps.user_enters_password_as_into_password_field(java.lang.String)">
+                <span>And user enters password as "Password@123" into password field</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.LoginPageSteps.user_clicks_on_login_button()">
+                <span>And user clicks on login button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.LoginPageSteps.user_gets_the_family_central_page()">
+                <span>Then user gets the family central page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.LoginPageSteps.page_title_should_be(java.lang.String)">
+                <span>And page title should be "https://www.familycentral.com"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>_L_o_g_i_n_ _w_i_t_h_ _v_a_l_i_d_ _c_r_e_d_e_n_t_i_a_l_s_
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../Screenshots/embedded6.png' src="../Screenshots/embedded6.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="168"><span class="badge log pass-bg mr-2">Pass</span>Login page title</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_is_on_landing_page()">
+                <span>Given user is on landing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_gets_the_title_of_the_page()">
+                <span>When user gets the title of the page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="174"><span class="badge log fail-bg mr-2">Fail</span>Login with valid credentials</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_is_on_landing_page()">
+                <span>Given user is on landing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_clicks_on_landing_page_login()">
+                <span>When user clicks on LandingPageLogin</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_clicks_on_login_option_of_families()">
+                <span>And user clicks on login option of families</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="parallel.LoginPageSteps.user_should_navigate_to_login_page()">
+                <span>Then user should navigate to login page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="parallel.LoginPageSteps.user_enters_username_as_into_email_field(java.lang.String)">
+                <span>When user enters username as "ashokmarch26@yopmail.com" into email field</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@id='login-email'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.1, moz:accessibilityChecks: false, moz:buildID: 20240321230221, moz:debuggerAddress: 127.0.0.1:38697, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 23392, moz:profile: C:\WINDOWS\SystemTemp\rust_..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:38697/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a6e259e1-eb9d-4e83-9e4a-5ba1fd188006
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.qa.Utils.WebDriverWaits.waitForElementToBeClickable(WebDriverWaits.java:37)
+	at com.Pages.LoginPage.enteremailaddress(LoginPage.java:53)
+	at parallel.LoginPageSteps.user_enters_username_as_into_email_field(LoginPageSteps.java:64)
+	at ✽.user enters username as "ashokmarch26@yopmail.com" into email field(file:///C:/Users/Ashok/eclipse-workspace/FC_BDD_Git_Jenkins/src/test/resources/features/LoginPage.feature:17)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.LoginPageSteps.user_enters_password_as_into_password_field(java.lang.String)">
+                <span>And user enters password as "Password@123" into password field</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.LoginPageSteps.user_clicks_on_login_button()">
+                <span>And user clicks on login button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.LoginPageSteps.user_gets_the_family_central_page()">
+                <span>Then user gets the family central page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallel.LoginPageSteps.page_title_should_be(java.lang.String)">
+                <span>And page title should be "https://www.familycentral.com"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>_L_o_g_i_n_ _w_i_t_h_ _v_a_l_i_d_ _c_r_e_d_e_n_t_i_a_l_s_
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../Screenshots/embedded10.png' src="../Screenshots/embedded10.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">4</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+<span class='badge log badge-danger'>8</span>
+</span>
+<p class="name">@feature</p>
+<p class="duration text-sm">12 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@feature</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+<span status="fail" class='badge log badge-danger'>8 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>13:44:02 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Accounts page title</a>
+<div class="">
+<span class="badge badge-default">Account Page feature.Accounts page title</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>13:44:05 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='6'>Accounts page title</a>
+<div class="">
+<span class="badge badge-default">Account Page feature.Accounts page title</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>13:44:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='14'>Accounts section count</a>
+<div class="">
+<span class="badge badge-default">Account Page feature.Accounts section count</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>13:44:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='22'>Accounts section count</a>
+<div class="">
+<span class="badge badge-default">Account Page feature.Accounts section count</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='30' id='31'>User Creates Monthly Recurring Calendar Event with Reminder</a>
+<div class="">
+<span class="badge badge-default">Calendar Event Creation with Recurring and Reminder Options.User Creates Monthly Recurring Calendar Event with Reminder</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:26 pm</td>
+<td>
+<a href="#" class="linked" test-id='30' id='37'>User Creates Monthly Recurring Calendar Event with Reminder</a>
+<div class="">
+<span class="badge badge-default">Calendar Event Creation with Recurring and Reminder Options.User Creates Monthly Recurring Calendar Event with Reminder</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='56'>Uploading a file using Add option under Photos videos</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Add option under Photos videos</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='74'>Uploading a file using Add option under Photos videos</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Add option under Photos videos</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:45:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='85'>Uploading a file using Click to Upload</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Click to Upload</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:45:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='96'>User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:46:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='140'>Uploading a file using Click to Upload</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Click to Upload</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:46:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='151'>User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>4</span>
+</span>
+<p class="name">@login</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@login</h4>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='56'>Uploading a file using Add option under Photos videos</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Add option under Photos videos</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='74'>Uploading a file using Add option under Photos videos</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Add option under Photos videos</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:45:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='113' id='120'>Login with valid credentials</a>
+<div class="">
+<span class="badge badge-default">login page feature.Login with valid credentials</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:47:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='113' id='174'>Login with valid credentials</a>
+<div class="">
+<span class="badge badge-default">login page feature.Login with valid credentials</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>6</span>
+</span>
+<p class="name">@run-together</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@run-together</h4>
+<span status="fail" class='badge log badge-danger'>6 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='56'>Uploading a file using Add option under Photos videos</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Add option under Photos videos</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='74'>Uploading a file using Add option under Photos videos</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Add option under Photos videos</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:45:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='85'>Uploading a file using Click to Upload</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Click to Upload</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:45:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='96'>User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:46:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='140'>Uploading a file using Click to Upload</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Click to Upload</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:46:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='151'>User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">@Ashok</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Ashok</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='56'>Uploading a file using Add option under Photos videos</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Add option under Photos videos</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='74'>Uploading a file using Add option under Photos videos</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Add option under Photos videos</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>10</span>
+</span>
+<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="duration text-sm">10 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.TimeoutException</h4>
+<span status="fail" class='badge log badge-danger'>10 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='30' id='34'>Given User is already logged in to application</a>
+<div class="">
+<span class="badge badge-default">Calendar Event Creation with Recurring and Reminder Options.User Creates Monthly Recurring Calendar Event with Reminder.Given User is already logged in to application</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:26 pm</td>
+<td>
+<a href="#" class="linked" test-id='30' id='40'>Given User is already logged in to application</a>
+<div class="">
+<span class="badge badge-default">Calendar Event Creation with Recurring and Reminder Options.User Creates Monthly Recurring Calendar Event with Reminder.Given User is already logged in to application</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='59'>Given User is already logged in to application</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Add option under Photos videos.Given User is already logged in to application</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:45:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='90'>And User clicks on Family Member</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Click to Upload.And User clicks on Family Member</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:45:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='101'>When User clicks on Subscriber Folder</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder.When User clicks on Subscriber Folder</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:45:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='113' id='127'>When user enters username as "ashokmarch26@yopmail.com" into email field</a>
+<div class="">
+<span class="badge badge-default">login page feature.Login with valid credentials.When user enters username as "ashokmarch26@yopmail.com" into email field</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:44:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='77'>Given User is already logged in to application</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Add option under Photos videos.Given User is already logged in to application</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:46:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='145'>And User clicks on Family Member</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.Uploading a file using Click to Upload.And User clicks on Family Member</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:46:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='55' id='156'>When User clicks on Subscriber Folder</a>
+<div class="">
+<span class="badge badge-default">Upload a file functionality into Photos and Videos.User Adds a Folder Under Subscriber Folder and Uploads a File into the New Folder.When User clicks on Subscriber Folder</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:47:18 pm</td>
+<td>
+<a href="#" class="linked" test-id='113' id='181'>When user enters username as "ashokmarch26@yopmail.com" into email field</a>
+<div class="">
+<span class="badge badge-default">login page feature.Login with valid credentials.When user enters username as "ashokmarch26@yopmail.com" into email field</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

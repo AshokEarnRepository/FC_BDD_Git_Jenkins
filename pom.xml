@@ -118,12 +118,9 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.2.5</version>
 					<configuration>
-						<includes>
-							<include>**/*.java</include>
-						</includes>
-						<testFailureIgnore>true</testFailureIgnore>
-						<parallel>methods</parallel>
-						<useUnlimitedThreads>true</useUnlimitedThreads>
+						<suiteXmlFiles>
+							<suiteXmlFile>testng.xml</suiteXmlFile>
+						</suiteXmlFiles>
 					</configuration>
 				</plugin>
 			</plugins>

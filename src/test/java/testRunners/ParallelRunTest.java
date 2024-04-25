@@ -18,8 +18,8 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-//	    features = {"src/test/resources/features/FileUploadTypes_PhotosVideos.feature"},
 	    features = {"src/test/resources/features/Calendar_NewEvent.feature"},
+//	    features = {"src/test/resources/features/"},
 	    glue = {"parallel", "AppHooks"},
 		
 		// Below two lines is for Parallel execution
@@ -41,21 +41,21 @@ public class ParallelRunTest extends AbstractTestNGCucumberTests {
 
 //	If you want to run from TestRunner only then uncomment this below code
 	
-    @BeforeClass
-    public static void setUp() {
-        driver = DriverFactory.getDriver();
-    }
+//    @BeforeClass
+//    public static void setUp() {
+//        driver = DriverFactory.getDriver();
+//    }
 	
 //	If you want to run from TestRunner only then uncomment this above code
     
     
 	//crossBrowser SetUp>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	
-//	@BeforeClass(alwaysRun = true)
-//	@Parameters("browser")  // No quotes around "browser"
-//	public void setUp(@Optional String browser) {  // No need for @Parameters here
-//	    driver = DriverFactory.init_driver(browser);
-//	}
+	@BeforeClass(alwaysRun = true)
+	@Parameters("browser")  // No quotes around "browser"
+	public void setUp(@Optional String browser) {  // No need for @Parameters here
+	    driver = DriverFactory.init_driver(browser);
+	}
 	
 	//crossBrowser SetUp>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	
@@ -73,7 +73,7 @@ public class ParallelRunTest extends AbstractTestNGCucumberTests {
         if (driver != null) {
         	
         	System.out.println("Browser Closed if I put driver.quit here");
-            driver.quit();
+//            driver.quit();
         }
     }
     
